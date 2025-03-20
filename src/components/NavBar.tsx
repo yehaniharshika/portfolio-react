@@ -48,7 +48,7 @@ export const NavBar: React.FC = () => {
     ];
 
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"}`}>
+        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white dark:bg-gray-800 shadow-md py-2" : "bg-transparent py-4"}`}>
             <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
                 <a
                     href="#"

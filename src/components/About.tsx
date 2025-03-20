@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export const About = () => {
     return (
         <section id="about" className="py-20 bg-white dark:bg-gray-800 w-full">
