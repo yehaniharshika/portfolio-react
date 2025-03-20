@@ -19,6 +19,7 @@ import {
     SiFigma,
     SiPostman, SiFirebase
 } from "react-icons/si";
+import {TbBrandReactNative} from "react-icons/tb";
 
 export const Skills = () => {
     const [activeCategory, setActiveCategory] = useState("frontend");
@@ -47,7 +48,7 @@ export const Skills = () => {
         { name: "SQL Database", icon: <FaDatabase className="w-10 h-10 text-blue-500" />, category: "database" },
         {name: "Firebase", icon: <SiFirebase className="w-10 h-10 text-orange-500"/>, category: "database"},
 
-        { name: "React Native", icon: <SiFlutter className="w-10 h-10" />, category: "mobile" },
+        { name: "React Native", icon: <TbBrandReactNative className="w-10 h-10 text-blue-500" />, category: "mobile" },
         { name: "Flutter", icon: <SiFlutter className="w-10 h-10 text-blue-400" />, category: "mobile" },
         { name: "Android", icon: <FaMobileAlt className="w-10 h-10 text-green-500" />, category: "mobile" },
 
@@ -57,7 +58,7 @@ export const Skills = () => {
         { name: "Postman", icon: <SiPostman className="w-10 h-10 text-orange-600" />, category: "other" },
     ];
     return (
-        <section id="technical-skills" className="py-20 bg-gray-50 dark:bg-gray-900 w-full">
+        <section id="skills" className="py-20 bg-white dark:bg-gray-800  w-full">
             <div className="container mx-auto px-4 md:px-6 text-center">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-white" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     Technical <span style={{fontFamily: 'Montserrat, sans-serif',color:"#00cec9"}}>Skills</span>
@@ -89,7 +90,7 @@ export const Skills = () => {
                         .map((tech) => (
                             <div
                                 key={tech.name}
-                                className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
+                                className="p-4 bg-white dark:bg-gray-600 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
                             >
                                 {tech.icon}
                                 <h3 className="font-semibold text-gray-900 dark:text-white mt-3 text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>

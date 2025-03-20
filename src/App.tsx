@@ -7,6 +7,7 @@ import {Contact} from "./components/Contact.tsx";
 
 import {Projects} from "./components/Projects.tsx";
 import {About} from "./components/About.tsx";
+import {Education} from "./components/Education.tsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -28,6 +29,7 @@ function App() {
         <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <HeroPage/>
         <About/>
+        <Education/>
         <Skills/>
         <Projects/>
         <Contact/>
