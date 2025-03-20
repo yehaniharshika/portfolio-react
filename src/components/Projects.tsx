@@ -1,5 +1,17 @@
 import { useState } from "react";
 import { Globe, Monitor, Smartphone } from "lucide-react";
+import mediTrackImage from "../assets/mediTrack.jpg";
+import greenShadowImage from "../assets/greenShadow.png";
+import flowerShopImage from "../assets/flower delivery.png";
+import posImage from "../assets/pos system.jpg";
+import taskManagementImage from "../assets/taskmate.jpg";
+import flowerMobileAppImage from "../assets/flower -delivery mobile.png";
+import thogakadeMobileApp from "../assets/grocery-software-info.png";
+import libraSysImage from "../assets/librasys.jpg";
+import bookWarmImage from "../assets/bookwARM.png";
+import chatApplicationImage from "../assets/chatWise.jpg";
+import {FaArrowRightToBracket} from "react-icons/fa6";
+
 
 type Project = {
     id: number;
@@ -17,91 +29,103 @@ export const Projects = () => {
     const projects: Project[] = [
         {
             id: 1,
-            title: "Crop Management System",
+            title: "MediTrack - Medical Center Management System",
             description:
-                "This is an advanced, web-based platform designed to manage and monitor agricultural activities efficiently.",
-            image:
-                "https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-            tags: ["React", "Node.js", "MySQL", "Prisma"],
+                "A web-based system designed to streamline medical center operations, including patient,doctor,nurse,department management, appointment scheduling, and medical records,payments handling.",
+            image: mediTrackImage,
+            tags: ["React","TypeScript","Node.js","Express.js", "MySQL", "Prisma"],
             link: "https://github.com/Thisura2001/GreenShadow-React.git",
             category: "web",
         },
         {
             id: 2,
-            title: "Green Shadow",
+            title: "BlossomBay - Flower Delivery App",
             description:
-                "This is an advanced, web-based platform designed to manage and monitor agricultural activities efficiently.",
-            image:
-                "https://images.unsplash.com/photo-1527847263472-aa5338d178b8?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            tags: ["JavaScript", "Spring Boot", "MySQL", "Hibernate"],
+                "An e-commerce platform for ordering and delivering flowers, featuring real-time order tracking, secure payments, and a user-friendly interface.",
+            image: flowerShopImage,
+            tags: ["React","Node.js","Express.js", "MongoDB"],
             link: "https://github.com/Thisura2001/Crop-monitoring-system-frontend.git",
             category: "web",
         },
         {
             id: 3,
-            title: "Recipe Finder",
+            title: "GreenShadow - Crop Monitoring System",
             description:
-                "A mobile application using React Native with Native Paper, backend using Prisma ORM and Express.js.",
-            image:
-                "https://plus.unsplash.com/premium_photo-1670895801174-8278045808f4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            tags: ["TypeScript", "React Native", "MySQL", "Prisma"],
+                "A web-based agricultural monitoring system that helps farmers track crop health, manage resources, and optimize yields through data-driven insights.",
+            image: greenShadowImage,
+            tags: ["HTML","CSS","JavaScript", "Spring Boot", "MySQL", "Hibernate"],
+            link: "https://github.com/Thisura2001/Crop-monitoring-system-frontend.git",
+            category: "web",
+        },
+        {
+            id: 4,
+            title: "FoodMart - POS System",
+            description:
+                "A comprehensive point-of-sale system for retail businesses, featuring inventory management, billing, and sales tracking.",
+            image: posImage,
+            tags: ["Java", "MySQL", "Hibernate", "JavaScript"],
+            link: "https://github.com/Thisura2001/pos-frontEnd.git",
+            category: "web",
+        },
+        {
+            id: 5,
+            title: "TaskMate - Task Manager App",
+            description:
+                "A mobile task management application that helps users organize their tasks, set priorities, and receive reminders efficiently.",
+            image: taskManagementImage,
+            tags: ["React Native","TypeScript", "MySQL", "Prisma"],
             link: "https://github.com/Thisura2001/Recipe_app_native.git",
             category: "mobile",
         },
         {
-            id: 4,
-            title: "Thogakade Mobile",
+            id: 6,
+            title: "Thogakade Mobile App",
             description:
-                "A mobile application using React Native with Native Paper, backend using Prisma ORM and Express.js.",
-            image:
-                "https://images.unsplash.com/photo-1556740714-a8395b3bf30f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "A mobile version of the 'Thogakade' POS system, allowing small retail businesses to manage inventory, sales, and customer orders on the go.",
+            image: thogakadeMobileApp,
             tags: ["TypeScript", "React Native", "MySQL", "Prisma"],
             link: "https://github.com/Thisura2001/thogakade_frontend.git",
             category: "mobile",
         },
         {
-            id: 5,
-            title: "LIYO (Garment Management System)",
+            id: 7,
+            title: "BlossomBay - Flower Delivery Mobile App",
             description:
-                "A software solution designed to streamline garment business operations, including staff and employee management.",
-            image:
-                "https://images.unsplash.com/photo-1493455198445-863243d88564?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            tags: ["Java", "MySQL", "Hibernate"],
+                "A mobile application that enables customers to browse flower collections, place orders, and track deliveries with ease.",
+            image: flowerMobileAppImage,
+            tags: ["TypeScript", "React Native", "MySQL", "Prisma"],
+            link: "https://github.com/Thisura2001/thogakade_frontend.git",
+            category: "mobile",
+        },
+        {
+            id: 8,
+            title: "LibraSys - Library Management System",
+            description:
+                "A desktop-based library management system designed to facilitate book cataloging, member management, and lending operations.",
+            image: libraSysImage,
+            tags: ["Java", "MySQL"],
             link: "https://github.com/Thisura2001/garment-management-system-Final-Project-.git",
             category: "desktop",
         },
         {
-            id: 6,
-            title: "Chat Application",
+            id: 9,
+            title: "ChatWise - Chat Application",
             description:
-                "A real-time chat application built using Java, enabling seamless group chat, emoji support, and image sharing.",
-            image:
-                "https://plus.unsplash.com/premium_photo-1721955487745-a2c3aea86d1c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "A real-time desktop chat application with features like group messaging, emoji support, and multimedia sharing.",
+            image: chatApplicationImage,
             tags: ["Java", "MySQL", "Hibernate"],
             link: "https://github.com/Thisura2001/chat-application-course-work.git",
             category: "desktop",
         },
         {
-            id: 7,
-            title: "Library Management System",
+            id: 10,
+            title: "BookWarm - Library Management System",
             description:
-                "A Library Management System (LMS) designed to manage and streamline library operations.",
-            image:
-                "https://plus.unsplash.com/premium_photo-1661962617265-b88538dc15e4?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "A feature-rich library management software designed to handle book lending, member registration, and catalog management efficiently.",
+            image: bookWarmImage,
             tags: ["Java", "MySQL", "Hibernate"],
             link: "https://github.com/Thisura2001/book-worm-library-management-system.git",
             category: "desktop",
-        },
-        {
-            id: 8,
-            title: "POS System",
-            description:
-                "This is an advanced, web-based platform designed to manage and monitor sales activities efficiently.",
-            image:
-                "https://images.unsplash.com/photo-1602665478334-f8c4fd62ede4?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            tags: ["Java", "MySQL", "Hibernate", "JavaScript"],
-            link: "https://github.com/Thisura2001/pos-frontEnd.git",
-            category: "web",
         },
     ];
 
@@ -141,9 +165,10 @@ export const Projects = () => {
                             onClick={() => setActiveCategory(id)}
                             className={`flex items-center px-6 py-3 rounded-lg transition-all duration-300 ${
                                 activeCategory === id
-                                    ? "bg-indigo-600 dark:bg-indigo-500 text-white"
-                                    : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
+                                    ? "bg-[#00cec9] dark:bg-[#00cec9] text-white"
+                                    : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-[#00cec9] dark:hover:bg-[#00cec9]"
                             }`}
+                            style={{fontFamily: 'Montserrat, sans-serif'}}
                         >
                             <Icon className="w-5 h-5 mr-2" />
                             <span className="font-medium">{label}</span>
@@ -165,10 +190,12 @@ export const Projects = () => {
                                 <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
                             </div>
                             <div className="p-6">
-                                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                <h3 style={{fontFamily: 'Montserrat, sans-serif'}}
+                                    className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                                <p style={{fontFamily: 'Montserrat, sans-serif'}}
+                                   className="text-gray-600 dark:text-gray-300 mb-4">
                                     {project.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
@@ -176,33 +203,24 @@ export const Projects = () => {
                                         <span
                                             key={index}
                                             className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-sm rounded-full"
-                                        >
-                      {tag}
-                    </span>
+                                            style={{fontFamily: 'Montserrat, sans-serif'}}>{tag}</span>
                                     ))}
                                 </div>
                                 <a
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium flex items-center"
+                                    className="text-[#00cec9] dark:text-[#00cec9] hover:text-white dark:hover:text-[#00cec9] font-medium flex items-center px-4 py-2 rounded transition-all duration-300 relative hover:scale-95"
+                                    style={{
+                                        fontFamily: "Montserrat, sans-serif",
+                                    }}
                                 >
                                     View Project
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-4 w-4 ml-1"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M9 5l7 7-7 7"
-                                        />
-                                    </svg>
+                                    <FaArrowRightToBracket className="ml-2 h-4 w-4"/>
+                                    <span
+                                        className="absolute inset-0 border-2 border-[#00cec9] rounded opacity-0 hover:opacity-100 transition-opacity duration-300" style={{maxWidth:"180px"}}></span>
                                 </a>
+
                             </div>
                         </div>
                     ))}
