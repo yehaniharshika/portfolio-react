@@ -10,10 +10,10 @@ export const About = () => {
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.8, ease: "easeOut"}}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                        About Me
+                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white"
+                        style={{fontFamily: 'Montserrat, sans-serif'}}>
+                        About <span style={{fontFamily: 'Montserrat, sans-serif', color: "#00cec9"}}>Me</span>
                     </h2>
-                    <div className="w-20 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto mt-4"></div>
                 </motion.div>
                 <motion.div
                     className="max-w-3xl mx-auto"
