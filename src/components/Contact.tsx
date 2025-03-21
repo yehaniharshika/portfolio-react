@@ -240,8 +240,8 @@ export const Contact = () => {
                                 <div>
                                     <button
                                         type="submit"
-                                        className="w-full px-6 py-3 bg-[#006765] text-white font-medium rounded-md hover:bg-[#00cec9] transition-colors"
-                                        style={{fontFamily: "Montserrat, sans-serif"}}
+                                        className="px-6 py-3 bg-[#00cec9] text-white font-medium rounded-md hover:bg-[#00cec9] transition-colors"
+                                        style={{fontFamily: "Montserrat, sans-serif",maxWidth:"200px",cursor:"pointer"}}
                                     >
                                         Send Message
                                     </button>

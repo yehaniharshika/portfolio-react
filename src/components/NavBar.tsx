@@ -59,7 +59,7 @@ export const NavBar: React.FC = () => {
                         window.scrollTo({top: 0, behavior: "smooth"});
                     }}
                 >
-                    Yehani.
+                    yehani.
                 </a>
 
                 <div className="flex items-center space-x-8">
@@ -68,7 +68,7 @@ export const NavBar: React.FC = () => {
                             <button
                                 key={item.id}
                                 onClick={() => scrollToSection(item.id)}
-                                className="text-white hover:text-[#00cec9] transition-colors font-[Montserrat]"
+                                className="text-white hover:text-[#00cec9] transition-colors font-[Montserrat] cursor-pointer"
                                 style={{fontFamily: 'Montserrat, sans-serif',fontWeight: '600'}}
                             >
                                 {item.label}

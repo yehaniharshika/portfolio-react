@@ -163,7 +163,7 @@ export const Projects = () => {
                         <button
                             key={id}
                             onClick={() => setActiveCategory(id)}
-                            className={`flex items-center px-6 py-3 rounded-lg transition-all duration-300 ${
+                            className={`flex items-center px-6 py-3 rounded-lg transition-all duration-300 cursor-pointer ${
                                 activeCategory === id
                                     ? "bg-[#00cec9] dark:bg-[#00cec9] text-white"
                                     : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-[#00cec9] dark:hover:bg-[#00cec9]"
