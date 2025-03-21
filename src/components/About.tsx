@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import {GoDash} from "react-icons/go";
 
 export const About = () => {
     return (
@@ -21,57 +22,55 @@ export const About = () => {
                     animate={{opacity: 1}}
                     transition={{duration: 1, delay: 0.3}}
                 >
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                        Hello! I'm <strong>Thisura Liyanage</strong>, a passionate web and software developer with a
+
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                        Hello! I'm <strong>Yehani Harshika</strong>, a passionate web and software developer with a
                         strong foundation in modern technologies. Currently, I'm pursuing a <strong>Graduate Diploma in
                         Software Engineering (GDSE)</strong> at the <strong>Institute of Java Software
                         Engineering</strong> and a <strong>BSc (Hons) in Computer Science</strong> at the <strong>University
                         of Bolton</strong>.
                     </p>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                        My journey in technology began with a deep curiosity about how software works. Since then, I've
-                        been continuously learning and improving my skills in full-stack development, cloud computing,
-                        and emerging technologies to build high-quality, scalable applications that meet both user needs
-                        and business goals.
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                        My passion for technology began with an insatiable curiosity about how software operates.
+                        Over time, I have sharpened my expertise in full-stack development, cloud computing, and cutting-edge technologies,
+                        allowing me to craft efficient, scalable solutions that cater to both user expectations and business objectives.
+
                     </p>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                        When I'm not coding, you can find me exploring new technologies, watching Netflix, or enjoying a
-                        casual drink with friends. These activities help me
-                        maintain a creative mindset and bring fresh perspectives to my work.
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                        When I’m not coding, I enjoy exploring the latest tech trends,travelling,
+                        unwinding with Netflix, and spending quality time with friends.
+                        These moments of leisure keep me inspired and bring fresh perspectives to my work. I thrive on continuous learning,
+                        innovation, and pushing the boundaries of technology.
+
                     </p>
                     <motion.div
-                        className="mt-10 flex justify-center gap-6"
-                        initial={{opacity: 0, y: 20}}
-                        animate={{opacity: 1, y: 0}}
-                        transition={{duration: 0.8, delay: 0.5}}
+                        className="mt-10 flex justify-center items-center gap-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
                     >
                         <motion.div className="text-center" whileHover={{scale: 1.1}}>
-                            <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
+                            <div className="text-3xl font-bold text-[#00cec9] dark:text-[#00cec9]" style={{fontFamily: 'Montserrat, sans-serif'}}>
                                 2+
                             </div>
-                            <div className="text-gray-600 dark:text-gray-300">
+                            <div className="text-gray-600 dark:text-gray-300"  style={{fontFamily: 'Montserrat, sans-serif'}}>
                                 Years Experience
                             </div>
                         </motion.div>
+
+                        <GoDash className="text-gray-400 text-8xl rotate-90" />
+
                         <motion.div className="text-center" whileHover={{scale: 1.1}}>
-                            <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
-                                10+
+                            <div className="text-3xl font-bold text-[#00cec9] dark:text-[#00cec9]"  style={{fontFamily: 'Montserrat, sans-serif'}}>
+                                20+
                             </div>
-                            <div className="text-gray-600 dark:text-gray-300">
+                            <div className="text-gray-600 dark:text-gray-300"  style={{fontFamily: 'Montserrat, sans-serif'}}>
                                 Projects Completed
-                            </div>
-                        </motion.div>
-                        <motion.div className="text-center" whileHover={{scale: 1.1}}>
-                            <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
-                                10+
-                            </div>
-                            <div className="text-gray-600 dark:text-gray-300">
-                                Happy Clients
                             </div>
                         </motion.div>
                     </motion.div>
                 </motion.div>
             </div>
         </section>
-    )
+)
 }
