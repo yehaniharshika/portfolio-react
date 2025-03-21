@@ -76,28 +76,28 @@ export const NavBar: React.FC = () => {
                         ))}
                     </div>
 
-
                     <button
                         ref={buttonRef}
-                        className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                        className="md:hidden p-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors cursor-pointer"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-label="Toggle mobile menu"
                     >
                         {isMobileMenuOpen ? <X className="h-6 w-6 text-gray-600"/> :
-                            <Menu className="h-6 w-6 text-gray-600"/>}
+                            <Menu className="h-6 w-6 text-gray-400 font-bold"/>}
                     </button>
                 </div>
             </div>
             <div
                 ref={mobileMenuRef}
-                className={`md:hidden absolute top-full left-0 w-full bg-white shadow-lg transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
+                className={`md:hidden absolute top-full left-0 w-full dark:bg-gray-800 shadow-lg transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none text-white hover:text-[#00cec9]'}`}
+                style={{fontFamily: 'Montserrat, sans-serif',fontWeight:"bold"}}
             >
                 <div className="container mx-auto px-4 py-4 space-y-4">
-                {navItems.map(item => (
+                    {navItems.map(item => (
                         <button
                             key={item.id}
                             onClick={() => scrollToSection(item.id)}
-                            className="block w-full text-left px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+                            className="block w-full text-left px-4 py-2 text-white hover:text-[#00cec9] hover:bg-transparent rounded-lg transition-colors"
                         >
                             {item.label}
                         </button>

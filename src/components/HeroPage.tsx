@@ -36,7 +36,7 @@ export const HeroPage = () => {
                     <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-lg"
                        style={{fontFamily: 'Montserrat, sans-serif', fontSize: "18px", fontWeight: "500"}}>
                         A passionate Software Engineer and Full-Stack Developer dedicated to designing intuitive,
-                        high-performing, and visually engaging digital solutions...
+                        high-performing, and visually engaging digital solutions ...
                     </p>
                     <motion.div
                         className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start"
