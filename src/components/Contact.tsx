@@ -93,50 +93,60 @@ export const Contact = () => {
                             </p>
 
                             <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                transition={{duration: 0.8, ease: "easeOut"}}
                             >
                                 <div className="space-y-4">
-                                    <div className="flex items-start">
-                                        <FaMapMarkerAlt className="h-6 w-6 mr-3 mt-1 text-indigo-200" />
-                                        <div>
-                                            <p className="font-medium" style={{ fontFamily: "Montserrat, sans-serif" }}>Location</p>
-                                            <p className="text-black" style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600", fontSize: "14px" }}>Polonnaruwa, Sri Lanka</p>
+                                    {[
+                                        {icon: <FaMapMarkerAlt/>, label: "Location", value: "Polonnaruwa, Sri Lanka"},
+                                        {
+                                            icon: <FaEnvelope/>,
+                                            label: "Email",
+                                            value: "pamunuwayehaniharshika@gmail.com"
+                                        },
+                                        {icon: <FaPhoneAlt/>, label: "Phone", value: "+9476 445 0928"},
+                                    ].map((item, index) => (
+                                        <div key={index} className="flex items-start">
+                                            <div
+                                                className="text-indigo-200 sm:w-6 sm:h-6 w-4 h-4 mr-3 mt-1">{item.icon}</div>
+                                            <div>
+                                                <p className="font-medium sm:text-sm text-xs"
+                                                   style={{fontFamily: "Montserrat, sans-serif"}}>
+                                                    {item.label}
+                                                </p>
+                                                <p className="text-black font-semibold sm:text-xs text-[10px]"
+                                                   style={{fontFamily: "Montserrat, sans-serif"}}>
+                                                    {item.value}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <FaEnvelope className="h-6 w-6 mr-3 mt-1 text-indigo-200" />
-                                        <div>
-                                            <p className="font-medium" style={{ fontFamily: "Montserrat, sans-serif" }}>Email</p>
-                                            <p className="text-black" style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600", fontSize: "14px" }}>pamunuwayehaniharshika@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <FaPhoneAlt className="h-6 w-6 mr-3 mt-1 text-indigo-200" />
-                                        <div>
-                                            <p className="font-medium" style={{ fontFamily: "Montserrat, sans-serif" }}>Phone</p>
-                                            <p className="text-black" style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600", fontSize: "14px" }}>+9476 445 0928</p>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
-                                <div className="mt-8">
-                                    <p className="font-medium mb-4" style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "700", fontSize: "15px" }}>Follow me on,</p>
-                                    <div className="flex space-x-4">
+
+                                <div className="mt-6">
+                                    <p className="font-semibold sm:text-sm text-xs mb-3"
+                                       style={{fontFamily: "Montserrat, sans-serif"}}>
+                                        Follow me on,
+                                    </p>
+                                    <div className="flex space-x-3">
                                         {[
-                                            { href: "https://www.linkedin.com/in/yehani-harshika-pamunuwa-5b64a1283", icon: <FaLinkedinIn className="w-6 h-6" /> },
-                                            { href: "https://medium.com/@pamunuwayehaniharshika", icon: <FaMediumM className="w-6 h-6" /> },
-                                            { href: "https://github.com/yehaniharshika", icon: <FaGithub className="w-6 h-6" /> },
-                                            { href: "https://web.facebook.com/yehani.hpamunuwa", icon: <FaFacebook className="w-6 h-6" /> },
+                                            {
+                                                href: "https://www.linkedin.com/in/yehani-harshika-pamunuwa-5b64a1283",
+                                                icon: <FaLinkedinIn/>
+                                            },
+                                            {href: "https://medium.com/@pamunuwayehaniharshika", icon: <FaMediumM/>},
+                                            {href: "https://github.com/yehaniharshika", icon: <FaGithub/>},
+                                            {href: "https://web.facebook.com/yehani.hpamunuwa", icon: <FaFacebook/>},
                                         ].map((link, index) => (
                                             <motion.a
                                                 key={index}
                                                 href={link.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-white hover:bg-white hover:text-[#00cec9] transition p-2 rounded-full"
-                                                whileHover={{ scale: 1.1 }}
-                                                whileTap={{ scale: 0.9 }}
+                                                className="text-white hover:bg-white hover:text-[#00cec9] transition p-2 rounded-full sm:w-6 sm:h-6 w-4 h-4"
+                                                whileHover={{scale: 1.1}}
+                                                whileTap={{scale: 0.9}}
                                             >
                                                 {link.icon}
                                             </motion.a>
@@ -147,13 +157,16 @@ export const Contact = () => {
                         </div>
 
                         <div className="md:w-3/4 p-8">
-                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6"
+                                style={{fontFamily: "Montserrat, sans-serif"}}>
                                 Send Me a Message
                             </h3>
                             <form onSubmit={onSubmit} className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                                        <label htmlFor="name"
+                                               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                               style={{fontFamily: "Montserrat, sans-serif"}}>
                                             Your Name
                                         </label>
                                         <input
@@ -162,12 +175,14 @@ export const Contact = () => {
                                             name="name"
                                             placeholder="Enter your name"
                                             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                                            style={{ fontFamily: "Montserrat, sans-serif", fontSize: "13px" }}
+                                            style={{fontFamily: "Montserrat, sans-serif", fontSize: "13px"}}
                                             required
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                                        <label htmlFor="email"
+                                               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                               style={{fontFamily: "Montserrat, sans-serif"}}>
                                             Your Email
                                         </label>
                                         <input

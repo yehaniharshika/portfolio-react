@@ -8,7 +8,7 @@ export const HeroPage = () => {
     return (
         <section
             id={"home"}
-            className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 pt-24 pb-60"
+            className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 pt-24 pb-50"
         >
             <div
                 className="container mx-auto px-4 md:px-6 pt-16 flex flex-col md:flex-row items-center justify-between">
