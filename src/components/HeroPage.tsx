@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import profileImage from "../assets/photo.jpg";
-import resume from "../assets/photo.jpg";
+import resume from "../assets/resume.pdf";
 import "../components/style/HeroPage.css";
 
 export const HeroPage = () => {

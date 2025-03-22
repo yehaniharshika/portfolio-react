@@ -6,11 +6,11 @@ import Swal from 'sweetalert2';
 import "../components/style/alert.css";
 
 export const Contact = () => {
-    const onSubmit = async (event: FormEvent<HTMLFormElement>) => { // Type the event parameter
+    const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const formData = new FormData(event.target as HTMLFormElement);
+        const form = event.target as HTMLFormElement;
+        const formData = new FormData(form);
 
-        // Add your Web3Forms API access key
         formData.append("access_key", "417a5ac8-37b9-4690-9a88-4329eb7d691b");
 
         const object = Object.fromEntries(formData);
@@ -44,6 +44,9 @@ export const Contact = () => {
                         confirmButton: "swal-button",
                     }
                 });
+
+                // Clear form fields after successful submission
+                form.reset();
             } else {
                 console.error("Failed to send message", res);
                 Swal.fire({
