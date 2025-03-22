@@ -103,7 +103,7 @@ export const Contact = () => {
                                         <div>
                                             <p className="font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]"
                                                style={{fontFamily: "Montserrat, sans-serif"}}>Location</p>
-                                            <p className="text-black text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
+                                            <p className="text-black text-[11px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
                                                style={{fontFamily: "Montserrat, sans-serif", fontWeight: "600"}}>
                                                 Polonnaruwa, Sri Lanka
                                             </p>
@@ -114,7 +114,7 @@ export const Contact = () => {
                                         <div>
                                             <p className="font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]"
                                                style={{fontFamily: "Montserrat, sans-serif"}}>Email</p>
-                                            <p className="text-black text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
+                                            <p className="text-black text-[11px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
                                                style={{fontFamily: "Montserrat, sans-serif", fontWeight: "600"}}>
                                                 pamunuwayehaniharshika@gmail.com
                                             </p>
@@ -126,7 +126,7 @@ export const Contact = () => {
                                         <div>
                                             <p className="font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]"
                                                style={{fontFamily: "Montserrat, sans-serif"}}>Phone</p>
-                                            <p className="text-black text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
+                                            <p className="text-black text-[11px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
                                                style={{fontFamily: "Montserrat, sans-serif", fontWeight: "600"}}>
                                                 +9476 445 0928
                                             </p>
