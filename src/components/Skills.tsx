@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaAngular, FaNodeJs, FaPython,
-    FaJava, FaDatabase, FaMobileAlt, FaGithub
+    FaJava, FaDatabase, FaMobileAlt, FaGithub, FaGitAlt, FaAndroid
 } from "react-icons/fa";
 import {
     SiTailwindcss,
@@ -17,9 +17,10 @@ import {
     SiFlask,
     SiDocker,
     SiFigma,
-    SiPostman, SiFirebase
+    SiPostman, SiFirebase, SiWebstorm, SiIntellijidea
 } from "react-icons/si";
 import {TbBrandReactNative} from "react-icons/tb";
+import {VscVscode} from "react-icons/vsc";
 
 export const Skills = () => {
     const [activeCategory, setActiveCategory] = useState("frontend");
@@ -41,29 +42,35 @@ export const Skills = () => {
         { name: "Java", icon: <FaJava className="w-10 h-10 text-red-500" />, category: "backend" },
         { name: "Python", icon: <FaPython className="w-10 h-10 text-blue-500" />, category: "backend" },
         { name: "Node.js", icon: <FaNodeJs className="w-10 h-10 text-green-600" />, category: "backend" },
-        { name: "Express.js", icon: <SiExpress className="w-10 h-10 text-gray-700" />, category: "backend" },
+        { name: "Express.js", icon: <SiExpress className="w-10 h-10 text-gray-600" />, category: "backend" },
         { name: "Spring Boot", icon: <SiSpring className="w-10 h-10 text-green-500" />, category: "backend" },
 
         { name: "MongoDB", icon: <SiMongodb className="w-10 h-10 text-green-500" />, category: "database" },
         { name: "SQL Database", icon: <FaDatabase className="w-10 h-10 text-blue-500" />, category: "database" },
-        {name: "Firebase", icon: <SiFirebase className="w-10 h-10 text-orange-500"/>, category: "database"},
+        { name: "Firebase", icon: <SiFirebase className="w-10 h-10 text-orange-500" />, category: "database" },
 
         { name: "React Native", icon: <TbBrandReactNative className="w-10 h-10 text-blue-500" />, category: "mobile" },
         { name: "Flutter", icon: <SiFlutter className="w-10 h-10 text-blue-400" />, category: "mobile" },
         { name: "Android", icon: <FaMobileAlt className="w-10 h-10 text-green-500" />, category: "mobile" },
 
         { name: "GitHub", icon: <FaGithub className="w-10 h-10 text-white" />, category: "other" },
+        { name: "Git", icon: <FaGitAlt className="w-10 h-10 text-orange-500" />, category: "other" },
         { name: "Docker", icon: <SiDocker className="w-10 h-10 text-blue-500" />, category: "other" },
         { name: "Figma", icon: <SiFigma className="w-10 h-10 text-purple-500" />, category: "other" },
         { name: "Postman", icon: <SiPostman className="w-10 h-10 text-orange-600" />, category: "other" },
+        { name: "VSCode", icon: <VscVscode className="w-10 h-10 text-blue-400" />, category: "other" },
+        { name: "IntelliJ", icon: <SiIntellijidea className="w-10 h-10 text-red" />, category: "other" },
+        { name: "WebStorm", icon: <SiWebstorm className="w-10 h-10 text-green-600" />, category: "other" },
+        { name: "Android Studio", icon: <FaAndroid className="w-10 h-10 text-green-300" />, category: "other" },
     ];
+
     return (
-        <section id="skills" className="py-20 bg-white dark:bg-gray-800  w-full">
+        <section id="skills" className="py-20 bg-white dark:bg-gray-800 w-full">
             <div className="container mx-auto px-4 md:px-6 text-center">
-                <h2 className="text-4xl font-bold text-gray-900 dark:text-white" style={{fontFamily: 'Montserrat, sans-serif'}}>
-                    Technical <span style={{fontFamily: 'Montserrat, sans-serif',color:"#00cec9"}}>Skills</span>
+                <h2 className="text-4xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    Technical <span style={{ fontFamily: 'Montserrat, sans-serif', color: "#00cec9" }}>Skills</span>
                 </h2>
-                <p className="mt-4 text-gray-600 dark:text-gray-300 text-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                <p className="mt-4 text-gray-600 dark:text-gray-300 text-lg" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     I have experience developing software using cutting-edge technologies, ensuring high-quality solutions tailored to meet business needs.
                 </p>
 
@@ -76,7 +83,7 @@ export const Skills = () => {
                             className={`px-4 py-2 rounded-full text-white font-medium transition-all cursor-pointer duration-300 ${
                                 activeCategory === category ? "bg-[#00cec9]" : "bg-gray-500 hover:bg-[#00cec9]"
                             }`}
-                            style={{fontFamily: 'Montserrat, sans-serif'}}
+                            style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
                             {category.charAt(0).toUpperCase() + category.slice(1)}
                         </button>

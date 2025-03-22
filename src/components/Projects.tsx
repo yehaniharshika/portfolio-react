@@ -5,7 +5,6 @@ import greenShadowImage from "../assets/greenShadow.png";
 import flowerShopImage from "../assets/flower delivery.png";
 import posImage from "../assets/pos system.jpg";
 import taskManagementImage from "../assets/taskmate.jpg";
-import flowerMobileAppImage from "../assets/flower -delivery mobile.png";
 import thogakadeMobileApp from "../assets/grocery-software-info.png";
 import libraSysImage from "../assets/librasys.jpg";
 import bookWarmImage from "../assets/bookwARM.png";
@@ -34,7 +33,7 @@ export const Projects = () => {
                 "A web-based system designed to streamline medical center operations, including patient,doctor,nurse,department management, appointment scheduling, and medical records,payments handling.",
             image: mediTrackImage,
             tags: ["React","TypeScript","Node.js","Express.js", "MySQL", "Prisma"],
-            link: "https://github.com/Thisura2001/GreenShadow-React.git",
+            link: "https://github.com/yehaniharshika/medi-track-hospital-management-system-backend.git",
             category: "web",
         },
         {
@@ -44,7 +43,7 @@ export const Projects = () => {
                 "An e-commerce platform for ordering and delivering flowers, featuring real-time order tracking, secure payments, and a user-friendly interface.",
             image: flowerShopImage,
             tags: ["React","Node.js","Express.js", "MongoDB"],
-            link: "https://github.com/Thisura2001/Crop-monitoring-system-frontend.git",
+            link: "https://github.com/yehaniharshika/BlossomBay-flower-delivery-app.git",
             category: "web",
         },
         {
@@ -54,7 +53,7 @@ export const Projects = () => {
                 "A web-based agricultural monitoring system that helps farmers track crop health, manage resources, and optimize yields through data-driven insights.",
             image: greenShadowImage,
             tags: ["HTML","CSS","JavaScript", "Spring Boot", "MySQL", "Hibernate"],
-            link: "https://github.com/Thisura2001/Crop-monitoring-system-frontend.git",
+            link: "https://github.com/yehaniharshika/GreenShadow-crop-monitoring-system-backend.git",
             category: "web",
         },
         {
@@ -64,7 +63,7 @@ export const Projects = () => {
                 "A comprehensive point-of-sale system for retail businesses, featuring inventory management, billing, and sales tracking.",
             image: posImage,
             tags: ["Java", "MySQL", "Hibernate", "JavaScript"],
-            link: "https://github.com/Thisura2001/pos-frontEnd.git",
+            link: "https://github.com/yehaniharshika/AAD-Assignment-phase-02-pos-system-backend-using-spring-MVC.git",
             category: "web",
         },
         {
@@ -74,7 +73,7 @@ export const Projects = () => {
                 "A mobile task management application that helps users organize their tasks, set priorities, and receive reminders efficiently.",
             image: taskManagementImage,
             tags: ["React Native","TypeScript", "MySQL", "Prisma"],
-            link: "https://github.com/Thisura2001/Recipe_app_native.git",
+            link: "https://github.com/yehaniharshika/taskmate-mobile-app.git",
             category: "mobile",
         },
         {
@@ -84,47 +83,37 @@ export const Projects = () => {
                 "A mobile version of the 'Thogakade' POS system, allowing small retail businesses to manage inventory, sales, and customer orders on the go.",
             image: thogakadeMobileApp,
             tags: ["TypeScript", "React Native", "MySQL", "Prisma"],
-            link: "https://github.com/Thisura2001/thogakade_frontend.git",
+            link: "https://github.com/yehaniharshika/thogakade-sample-mobile-app.git",
             category: "mobile",
         },
         {
             id: 7,
-            title: "BlossomBay - Flower Delivery Mobile App",
-            description:
-                "A mobile application that enables customers to browse flower collections, place orders, and track deliveries with ease.",
-            image: flowerMobileAppImage,
-            tags: ["TypeScript", "React Native", "MySQL", "Prisma"],
-            link: "https://github.com/Thisura2001/thogakade_frontend.git",
-            category: "mobile",
-        },
-        {
-            id: 8,
             title: "LibraSys - Library Management System",
             description:
                 "A desktop-based library management system designed to facilitate book cataloging, member management, and lending operations.",
             image: libraSysImage,
             tags: ["Java", "MySQL"],
-            link: "https://github.com/Thisura2001/garment-management-system-Final-Project-.git",
+            link: "https://github.com/yehaniharshika/LibraSys-LibraryManagementSystem.git",
             category: "desktop",
         },
         {
-            id: 9,
+            id: 8,
             title: "ChatWise - Chat Application",
             description:
                 "A real-time desktop chat application with features like group messaging, emoji support, and multimedia sharing.",
             image: chatApplicationImage,
             tags: ["Java", "MySQL", "Hibernate"],
-            link: "https://github.com/Thisura2001/chat-application-course-work.git",
+            link: "https://github.com/yehaniharshika/chat-room-applications.git",
             category: "desktop",
         },
         {
-            id: 10,
+            id: 9,
             title: "BookWarm - Library Management System",
             description:
                 "A feature-rich library management software designed to handle book lending, member registration, and catalog management efficiently.",
             image: bookWarmImage,
             tags: ["Java", "MySQL", "Hibernate"],
-            link: "https://github.com/Thisura2001/book-worm-library-management-system.git",
+            link: "https://github.com/yehaniharshika/BookWorm-OnlineLibraryManagementSystem.git",
             category: "desktop",
         },
     ];

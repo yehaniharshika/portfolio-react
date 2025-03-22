@@ -23,36 +23,55 @@ export const About = () => {
                     transition={{duration: 1, delay: 0.3}}
                 >
 
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6"
-                       style={{fontFamily: 'Montserrat, sans-serif'}}>
-                        Hello! I'm <strong>Yehani Harshika</strong>, a passionate web and software developer with a
-                        strong foundation in modern technologies. Currently, I'm pursuing a <strong>Graduate Diploma in
-                        Software Engineering (GDSE)</strong> at the <strong>Institute of Java Software
-                        Engineering</strong> and a <strong>BSc (Hons) in Computer Science</strong> at the <strong>University
-                        of Bolton</strong>.
-                    </p>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6"
-                       style={{fontFamily: 'Montserrat, sans-serif'}}>
-                        My passion for technology began with an insatiable curiosity about how software operates.
-                        Over time, I have sharpened my expertise in full-stack development, cloud computing, and
-                        cutting-edge technologies,
-                        allowing me to craft efficient, scalable solutions that cater to both user expectations and
-                        business objectives.
+                    <motion.div
+                        className="bg-transparent p-6 rounded-lg shadow-lg border border-gray-200 mb-6 max-w-4xl mx-auto hover:border-4 hover:border-[#00cec9]"
+                        whileHover={{
+                            scale: 1.03,
+                            boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+                            transition: {duration: 0.3}
+                        }}
+                        whileTap={{
+                            scale: 0.98
+                        }}
+                    >
+                        <p className="text-lg text-gray-600 dark:text-gray-300 mb-6"
+                           style={{fontFamily: "Montserrat, sans-serif"}}>
+                            Hello! I'm <strong>Yehani Harshika</strong>, a passionate web and software developer with a
+                            strong foundation in modern technologies. Currently, I'm pursuing a <strong>Graduate Diploma
+                            in
+                            Software Engineering (GDSE)</strong> at the <strong>Institute of Java Software
+                            Engineering</strong> and a <strong>BSc (Hons) in Computer Science</strong> at the <strong>University
+                            of Bolton</strong>.
+                        </p>
 
-                    </p>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6"
-                       style={{fontFamily: 'Montserrat, sans-serif'}}>
-                        When I’m not coding, I enjoy exploring the latest tech trends,travelling,
-                        unwinding with Netflix, and spending quality time with friends.
-                        These moments of leisure keep me inspired and bring fresh perspectives to my work. I thrive on
-                        continuous learning,
-                        innovation, and pushing the boundaries of technology.
-                    </p>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6" style={{fontFamily: 'Montserrat, sans-serif'}}>
-                        In addition to my technical journey, I have 6 months of work experience in the banking sector, where I handled
-                        account creation, payments, withdrawals at the cash counter, and operations in the pawning section. This experience strengthened
-                        my analytical skills, attention to detail, and ability to work efficiently in fast-paced environments.
-                    </p>
+                        <p className="text-lg text-gray-600 dark:text-gray-300 mb-6"
+                           style={{fontFamily: "Montserrat, sans-serif"}}>
+                            My passion for technology began with an insatiable curiosity about how software operates.
+                            Over time, I have sharpened my expertise in full-stack development, cloud computing, and
+                            cutting-edge technologies, allowing me to craft efficient, scalable solutions that cater to
+                            both user expectations and
+                            business objectives.
+                        </p>
+
+                        <p className="text-lg text-gray-600 dark:text-gray-300 mb-6"
+                           style={{fontFamily: "Montserrat, sans-serif"}}>
+                            When I’m not coding, I enjoy exploring the latest tech trends, travelling,
+                            unwinding with Netflix, and spending quality time with friends. These moments of leisure
+                            keep me inspired
+                            and bring fresh perspectives to my work. I thrive on continuous learning, innovation, and
+                            pushing the boundaries of technology.
+                        </p>
+
+                        <p className="text-lg text-gray-600 dark:text-gray-300 mb-6"
+                           style={{fontFamily: "Montserrat, sans-serif"}}>
+                            In addition to my technical journey, I have 6 months of work experience in the banking
+                            sector, where I handled
+                            account creation, payments, withdrawals at the cash counter, and operations in the pawning
+                            section. This experience strengthened
+                            my analytical skills, attention to detail, and ability to work efficiently in fast-paced
+                            environments.
+                        </p>
+                    </motion.div>
                     <motion.div
                         className="mt-10 flex justify-center items-center gap-6"
                         initial={{opacity: 0, y: 20}}
@@ -65,7 +84,7 @@ export const About = () => {
                                 2+
                             </div>
                             <div className="text-gray-600 dark:text-gray-300"
-                                 style={{fontFamily: 'Montserrat, sans-serif',fontWeight: "700"}}>
+                                 style={{fontFamily: 'Montserrat, sans-serif', fontWeight: "700"}}>
                                 Years Experience
                             </div>
                         </motion.div>
@@ -78,7 +97,7 @@ export const About = () => {
                                 20+
                             </div>
                             <div className="text-gray-600 dark:text-gray-300"
-                                 style={{fontFamily: 'Montserrat, sans-serif',fontWeight: "700"}}>
+                                 style={{fontFamily: 'Montserrat, sans-serif', fontWeight: "700"}}>
                                 Projects Completed
                             </div>
                         </motion.div>
