@@ -9,6 +9,8 @@ import thogakadeMobileApp from "../assets/grocery-software-info.png";
 import libraSysImage from "../assets/librasys.jpg";
 import bookWarmImage from "../assets/bookwARM.png";
 import chatApplicationImage from "../assets/chatWise.jpg";
+import movieExplorerApp from "../assets/movie-Explorer-app.jpg";
+import recipeSharingPlatform from  "../assets/recipe-sharing-platform.jpg";
 import {FaArrowRightToBracket} from "react-icons/fa6";
 
 
@@ -115,6 +117,26 @@ export const Projects = () => {
             tags: ["Java", "MySQL", "Hibernate"],
             link: "https://github.com/yehaniharshika/BookWorm-OnlineLibraryManagementSystem.git",
             category: "desktop",
+        },
+        {
+            id: 10,
+            title: "MovieHunt - Movie Explorer App",
+            description:
+                "A modern Movie app for discovering movies using TMDb API. Features include real-time search, trending films, detailed views, favorites, responsive design, and light/dark mode.",
+            image: movieExplorerApp,
+            tags: ["React", "Redux", "TypeScript","Axios","Material UI","TMDb API"],
+            link: "https://moviehunt-eight.vercel.app/",
+            category: "web",
+        },
+        {
+            id: 9,
+            title: "FlavorNest - Recipe Sharing Platform",
+            description:
+                "FlavorNest is a recipe-sharing platform frontend that allows users to discover, share, and interact with a variety of recipes, offering an engaging and user-friendly interface for seamless browsing and interaction.",
+            image: recipeSharingPlatform,
+            tags: ["React", "Redux", "TypeScript","Material UI"],
+            link: "https://github.com/yehaniharshika/recipe-sharing-platform.git",
+            category: "web",
         },
     ];
 
