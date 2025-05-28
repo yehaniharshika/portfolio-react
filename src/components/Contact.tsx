@@ -108,7 +108,7 @@ export const Contact = () => {
                                                style={{fontFamily: "Montserrat, sans-serif"}}>Location</p>
                                             <p className="text-black text-[11px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
                                                style={{fontFamily: "Montserrat, sans-serif", fontWeight: "600"}}>
-                                                Polonnaruwa, Sri Lanka
+                                                Panadura, Sri Lanka
                                             </p>
                                         </div>
                                     </div>
