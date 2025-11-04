@@ -42,7 +42,7 @@ export const About = () => {
             }}
           >
             <p
-              className="text-lg text-gray-600 dark:text-gray-300 mb-6"
+              className=" text-gray-600 dark:text-gray-300 mb-6"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               Hello! I'm <strong>Yehani Harshika</strong>, a passionate web and
@@ -55,7 +55,7 @@ export const About = () => {
             </p>
 
             <p
-              className="text-lg text-gray-600 dark:text-gray-300 mb-6"
+              className=" text-gray-600 dark:text-gray-300 mb-6"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               My passion for technology began with an insatiable curiosity about
