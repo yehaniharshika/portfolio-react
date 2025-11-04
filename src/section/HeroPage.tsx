@@ -179,31 +179,21 @@ export const HeroPage = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          className="md:w-1/2 flex justify-center md:justify-center relative"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          {/* Particle Globe Behind Image */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <ParticleGlobe />
-          </div>
+         <div
+           className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl transition-all duration-300 hover:border-[#00cec9]"
+           style={{ marginTop: "30px" }}
+         >
+           {/* Dark Overlay */}
+           <div className="absolute inset-0 bg-black opacity-50"></div>
 
-          <div
-            className="relative w-72 h-72 mt-50 md:w-90 md:h-90 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl transition-all duration-300 hover:border-[#00cec9] z-20"
-            style={{ marginTop: "5px" }}
-          >
-            <div className="absolute inset-0 bg-black opacity-50"></div>
-            <motion.img
-              src={profileImage}
-              alt="Yehani Harshika"
-              className="w-full h-full object-cover"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3 }}
-            />
-          </div>
-        </motion.div>
+           <motion.img
+             src={profileImage}
+             alt="Your Name"
+             className="w-full h-full object-cover relative z-20"
+             whileHover={{ scale: 1.1 }}
+             transition={{ duration: 0.3 }}
+           />
+         </div>
       </div>
     </section>
   );
