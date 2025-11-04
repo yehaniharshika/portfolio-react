@@ -1,36 +1,19 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MapPin, Calendar, Award, Briefcase, Building2 } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
-
-type ExperienceItem = {
-  id: number;
-  title: string;
-  organization: string;
-  location: string;
-  date: string;
-
-  points?: string[];
-  skills: string[];
-  icon: React.ReactNode;
-};
+import { MapPin, Calendar, Briefcase, Building2 } from "lucide-react";
 
 const Experience = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const timelineItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const timelineLineRef = useRef<HTMLDivElement>(null);
 
-  const experiences: ExperienceItem[] = [
+  const experiences = [
     {
       id: 1,
       title: "Intern Software Engineer",
       organization: "Hcode Solutions Pvt Ltd",
       location: "Moratuwa, Sri Lanka",
       date: "May 2025 - November 2025",
-
       points: [
         "Contributed to the design and development of multiple full-stack web applications, managing both frontend and backend.",
         "Collaborated with the team on backend implementation for a marketplace project.",
@@ -70,9 +53,6 @@ const Experience = () => {
     },
   ];
 
-  /* --------------------------------------------------------------
-     Three.js Starfield Background (unchanged)
-  -------------------------------------------------------------- */
   useEffect(() => {
     if (!canvasRef.current) return;
 
@@ -93,7 +73,6 @@ const Experience = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     camera.position.z = 5;
 
-    // starfield
     const starsGeometry = new THREE.BufferGeometry();
     const starCount = 500;
     const positions = new Float32Array(starCount * 3);
@@ -114,7 +93,6 @@ const Experience = () => {
     const stars = new THREE.Points(starsGeometry, starsMaterial);
     scene.add(stars);
 
-    // glowing particles
     const particlesGeometry = new THREE.BufferGeometry();
     const particleCount = 50;
     const particlePositions = new Float32Array(particleCount * 3);
@@ -169,296 +147,332 @@ const Experience = () => {
     };
   }, []);
 
-  /* --------------------------------------------------------------
-     GSAP Timeline Animations (unchanged)
-  -------------------------------------------------------------- */
-  useEffect(() => {
-    if (timelineLineRef.current) {
-      gsap.fromTo(
-        timelineLineRef.current,
-        { scaleY: 0 },
-        {
-          scaleY: 1,
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: timelineLineRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            scrub: 1,
-          },
-        }
-      );
-    }
-
-    timelineItemsRef.current.forEach((item, index) => {
-      if (!item) return;
-      const isLeft = index % 2 === 0;
-
-      gsap.fromTo(
-        item,
-        { opacity: 0, x: isLeft ? -100 : 100, scale: 0.8 },
-        {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: item,
-            start: "top 85%",
-            end: "bottom 15%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-
-      const icon = item.querySelector(".timeline-icon");
-      if (icon) {
-        gsap.fromTo(
-          icon,
-          { scale: 0, rotation: -180 },
-          {
-            scale: 1,
-            rotation: 0,
-            duration: 0.8,
-            ease: "back.out(1.7)",
-            scrollTrigger: { trigger: item, start: "top 80%" },
-          }
-        );
-      }
-    });
-  }, []);
-
   return (
-    <section
-      id="experience"
-      className="py-20 bg-gray-900 text-white w-full relative overflow-hidden min-h-screen"
-    >
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ opacity: 0.4 }}
-      />
+    <>
+      <style>{`
+        @media (max-width: 768px) {
+          .timeline-container {
+            padding-left: 3rem !important;
+          }
+          
+          .timeline-line {
+            left: 2.5rem !important;
+            transform: none !important;
+          }
+          
+          .timeline-item {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 0 !important;
+            position: relative;
+            padding-left: 3rem;
+          }
+          
+          .timeline-icon-wrapper {
+            position: absolute !important;
+            left: -0.25rem !important;
+            top: 0 !important;
+            width: auto !important;
+          }
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2
-            className="text-4xl font-bold mb-4"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-          >
-            Work <span className="text-[#00cec9]">Experience</span>
-          </h2>
-          <p
-            className="text-gray-300 text-lg mb-6"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-          >
-            
-          </p>
-        </div>
+          .timeline-icon-wrapper .icon-circle {
+            width: 60px !important;
+            height: 60px !important;
+          }
+          
+          .timeline-date-wrapper {
+            width: 100% !important;
+            margin-bottom: 1rem !important;
+            justify-content: flex-start !important;
+          }
+          
+          .timeline-content {
+            width: 100% !important;
+            text-align: left !important;
+          }
+          
+          .content-inner {
+            text-align: left !important;
+          }
 
-        <div className="relative max-w-6xl mx-auto">
-          <div
-            ref={timelineLineRef}
-            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#00cec9] via-white to-[#00cec9] h-full origin-top"
-            style={{ boxShadow: "0 0 20px rgba(0, 206, 201, 0.5)" }}
-          />
+          .content-inner .flex {
+            flex-direction: row !important;
+            justify-content: flex-start !important;
+          }
+          
+          .skills-wrapper {
+            justify-content: flex-start !important;
+          }
+          
+          .date-display {
+            text-align: left !important;
+          }
+        }
+      `}</style>
+      
+      <section
+        id="experience"
+        className="py-20 bg-gray-900 text-white w-full relative overflow-hidden min-h-screen"
+      >
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          style={{ opacity: 0.4 }}
+        />
 
-          <div className="space-y-24">
-            {experiences.map((exp, index) => {
-              const isLeft = index % 2 === 0;
-              /** NEW: force left alignment for Hcode (id 1) */
-              const forceLeft = exp.id === 1;
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2
+              className="text-4xl font-bold mb-4"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              Work <span className="text-[#00cec9]">Experience</span>
+            </h2>
+            <p
+              className="text-gray-300 text-lg mb-6"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              My professional journey
+            </p>
+          </div>
 
-              return (
-                <div
-                  key={exp.id}
-                  ref={(el) => {
-                    timelineItemsRef.current[index] = el;
-                  }}
-                  className={`flex items-center ${
-                    forceLeft
-                      ? "flex-row"
-                      : isLeft
-                      ? "flex-row"
-                      : "flex-row-reverse"
-                  } gap-8`}
-                >
-                  {/* Content Card */}
+          <div className="relative max-w-6xl mx-auto timeline-container">
+            <div
+              ref={timelineLineRef}
+              className="timeline-line absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#00cec9] via-white to-[#00cec9] h-full origin-top"
+              style={{ boxShadow: "0 0 20px rgba(0, 206, 201, 0.5)" }}
+            />
+
+            <div className="space-y-24">
+              {experiences.map((exp, index) => {
+                const isLeft = index % 2 === 0;
+
+                return (
                   <div
-                    className={`w-5/12 ${
-                      forceLeft
-                        ? "text-left"
-                        : isLeft
-                        ? "text-right"
-                        : "text-left"
-                    }`}
+                    key={exp.id}
+                    ref={(el) => {
+                      timelineItemsRef.current[index] = el;
+                    }}
+                    className="timeline-item relative"
                   >
-                    <div className="p-6 rounded-2xl shadow-2xl hover:shadow-[#00cec9]/50 hover:border-[#00cec9] transition-all duration-500 transform hover:scale-105 border border-white/10">
-                      <div
-                        className="flex items-start gap-3 mb-3"
-                        style={{
-                          flexDirection: forceLeft
-                            ? "row"
-                            : isLeft
-                            ? "row-reverse"
-                            : "row",
-                        }}
-                      >
-                        <div className="flex-1">
-                          <h3
-                            className="text-2xl font-bold mb-2 text-white"
-                            style={{ fontFamily: "Montserrat, sans-serif" }}
-                          >
-                            {exp.title}
-                          </h3>
-                          <div
-                            className="flex items-center gap-2 text-sm text-gray-300 mb-2"
-                            style={{
-                              justifyContent: forceLeft
-                                ? "flex-start"
-                                : isLeft
-                                ? "flex-end"
-                                : "flex-start",
-                            }}
-                          >
-                            <Briefcase className="w-4 h-4" />
+                    {/* Timeline Icon */}
+                    <div className="timeline-icon-wrapper absolute left-1/2 transform -translate-x-1/2 flex justify-center z-10">
+                      <div className="relative">
+                        <div
+                          className="icon-circle w-20 h-20 rounded-full bg-gradient-to-br from-[#00cec9] to-cyan-700 flex items-center justify-center text-4xl shadow-2xl border-4 border-white"
+                          style={{
+                            boxShadow: "0 0 30px rgba(0, 206, 201, 0.6)",
+                          }}
+                        >
+                          <Building2 />
+                        </div>
+                        <div className="absolute inset-0 rounded-full bg-[#00cec9] opacity-20 animate-ping" />
+                      </div>
+                    </div>
+
+                    {/* Desktop Layout */}
+                    <div className={`hidden md:flex items-start ${
+                      isLeft ? "flex-row" : "flex-row-reverse"
+                    } gap-12`}>
+                      {/* Content Card */}
+                      <div className={`w-5/12 ${exp.id === 1 ? "text-left" : isLeft ? "text-right" : "text-left"}`}>
+                        {/* Date Badge - Above Card */}
+                        <div
+                          className={`timeline-date-wrapper flex mb-4 ${
+                            exp.id === 1 ? "justify-start" : isLeft ? "justify-end" : "justify-start"
+                          }`}
+                        >
+                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-[#00cec9]/30">
+                            <Calendar className="w-5 h-5 text-[#00cec9]" />
                             <span
-                              style={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontWeight: "600",
-                              }}
-                            >
-                              {exp.organization}
-                            </span>
-                          </div>
-                          <div
-                            className="flex items-center gap-2 text-sm text-gray-300 font-medium"
-                            style={{
-                              justifyContent: forceLeft
-                                ? "flex-start"
-                                : isLeft
-                                ? "flex-end"
-                                : "flex-start",
-                            }}
-                          >
-                            <MapPin className="w-4 h-4" />
-                            <span
+                              className="font-bold text-[#00cec9] text-[13px]"
                               style={{ fontFamily: "Montserrat, sans-serif" }}
                             >
-                              {exp.location}
+                              {exp.date}
                             </span>
+                          </div>
+                        </div>
+
+                        <div className="content-inner p-6 rounded-2xl shadow-2xl hover:shadow-[#00cec9]/50 hover:border-[#00cec9] transition-all duration-500 transform hover:scale-105 border border-white/10">
+                          <div
+                            className="flex items-start gap-3 mb-3"
+                            style={{
+                              flexDirection: exp.id === 1 ? "row" : isLeft ? "row-reverse" : "row",
+                            }}
+                          >
+                            <div className="flex-1">
+                              <h3
+                                className="text-2xl font-bold mb-2 text-white"
+                                style={{ fontFamily: "Montserrat, sans-serif" }}
+                              >
+                                {exp.title}
+                              </h3>
+                              <div
+                                className="flex items-center gap-2 text-sm text-gray-300 mb-2"
+                                style={{
+                                  justifyContent: exp.id === 1 ? "flex-start" : isLeft
+                                    ? "flex-end"
+                                    : "flex-start",
+                                }}
+                              >
+                                <Briefcase className="w-4 h-4" />
+                                <span
+                                  style={{
+                                    fontFamily: "Montserrat, sans-serif",
+                                    fontWeight: "600",
+                                  }}
+                                >
+                                  {exp.organization}
+                                </span>
+                              </div>
+                              <div
+                                className="flex items-center gap-2 text-sm text-gray-300 font-medium"
+                                style={{
+                                  justifyContent: exp.id === 1 ? "flex-start" : isLeft
+                                    ? "flex-end"
+                                    : "flex-start",
+                                }}
+                              >
+                                <MapPin className="w-4 h-4" />
+                                <span
+                                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                                >
+                                  {exp.location}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {exp.points && exp.points.length > 0 && (
+                            <ul className="space-y-2 mb-4">
+                              {exp.points.map((point, idx) => (
+                                <li
+                                  key={idx}
+                                  className="text-gray-300 text-sm leading-relaxed flex items-start gap-2"
+                                  style={{
+                                    fontFamily: "Montserrat, sans-serif",
+                                    flexDirection: exp.id === 1 ? "row" : isLeft
+                                      ? "row-reverse"
+                                      : "row",
+                                  }}
+                                >
+                                  <span className="flex-1">{point}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+
+                          <div
+                            className={`skills-wrapper flex flex-wrap gap-2 ${
+                              exp.id === 1 ? "justify-start" : isLeft ? "justify-end" : "justify-start"
+                            }`}
+                          >
+                            {exp.skills.map((skill, idx) => (
+                              <span
+                                key={idx}
+                                className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-[#00cec9] hover:text-gray-900 transition-colors"
+                                style={{ fontFamily: "Montserrat, sans-serif" }}
+                              >
+                                {skill}
+                              </span>
+                            ))}
                           </div>
                         </div>
                       </div>
 
-                      {exp.points && exp.points.length > 0 && (
-                        <ul
-                          className={`space-y-2 mb-4 text-[40px] ${
-                            forceLeft ? "text-left" : ""
-                          }`}
-                        >
-                          {exp.points.map((point, idx) => (
-                            <li
-                              key={idx}
-                              className="text-gray-300 text-sm leading-relaxed flex items-start gap-2"
-                              style={{
-                                fontFamily: "Montserrat, sans-serif",
-                                /** Force left-aligned bullet for Hcode */
-                                flexDirection: forceLeft
-                                  ? "row"
-                                  : isLeft
-                                  ? "row-reverse"
-                                  : "row",
-                              }}
-                            >
-                              <span className="flex-1">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                      {/* Spacer for icon */}
+                      <div className="w-2/12"></div>
 
-                      <div
-                        className={`flex flex-wrap gap-2 ${
-                          forceLeft
-                            ? "justify-start"
-                            : isLeft
-                            ? "justify-end"
-                            : "justify-start"
-                        }`}
-                      >
-                        {exp.skills.map((skill, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-[#00cec9] hover:text-gray-900 transition-colors"
-                            style={{ fontFamily: "Montserrat, sans-serif" }}
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
+                      {/* Empty space on other side */}
+                      <div className="w-5/12"></div>
+                    </div>
 
-                      <div
-                        className={`text-sm text-gray-300 mt-4 font-semibold ${
-                          forceLeft
-                            ? "text-left"
-                            : isLeft
-                            ? "text-right"
-                            : "text-left"
-                        }`}
-                      >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full">
+                    {/* Mobile Layout */}
+                    <div className="md:hidden">
+                      {/* Date Badge - Above Card */}
+                      <div className="timeline-date-wrapper flex mb-4 justify-start">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-[#00cec9]/30">
+                          <Calendar className="w-5 h-5 text-[#00cec9]" />
                           <span
+                            className="font-bold text-[#00cec9] text-[12px]"
                             style={{ fontFamily: "Montserrat, sans-serif" }}
                           >
                             {exp.date}
                           </span>
                         </div>
                       </div>
-                    </div>
-                  </div>
 
-                  {/* Center Icon */}
-                  <div className="timeline-icon relative w-2/12 flex justify-center">
-                    <div className="relative">
-                      <div
-                        className="w-20 h-20 rounded-full bg-gradient-to-br from-[#00cec9] to-cyan-700 flex items-center justify-center text-4xl shadow-2xl border-4 border-white"
-                        style={{ boxShadow: "0 0 30px rgba(0, 206, 201, 0.6)" }}
-                      >
-                        <Building2 />
+                      {/* Content Card */}
+                      <div className="timeline-content">
+                        <div className="content-inner p-6 rounded-2xl shadow-2xl hover:shadow-[#00cec9]/50 hover:border-[#00cec9] transition-all duration-500 border border-white/10">
+                          <div className="flex items-start gap-3 mb-3">
+                            <div className="flex-1">
+                              <h3
+                                className="text-lg font-bold mb-2 text-white"
+                                style={{ fontFamily: "Montserrat, sans-serif" }}
+                              >
+                                {exp.title}
+                              </h3>
+                              <div className="flex items-center gap-2 text-sm text-gray-300 mb-2">
+                                <Briefcase className="w-4 h-4" />
+                                <span
+                                  style={{
+                                    fontFamily: "Montserrat, sans-serif",
+                                    fontWeight: "600",
+                                  }}
+                                >
+                                  {exp.organization}
+                                </span>
+                              </div>
+                              <div className="flex items-center gap-2 text-sm text-gray-300 font-medium">
+                                <MapPin className="w-4 h-4" />
+                                <span
+                                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                                >
+                                  {exp.location}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {exp.points && exp.points.length > 0 && (
+                            <ul className="space-y-2 mb-4">
+                              {exp.points.map((point, idx) => (
+                                <li
+                                  key={idx}
+                                  className="text-gray-300 text-sm leading-relaxed"
+                                  style={{
+                                    fontFamily: "Montserrat, sans-serif",
+                                  }}
+                                >
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+
+                          <div className="skills-wrapper flex flex-wrap gap-2 justify-start">
+                            {exp.skills.map((skill, idx) => (
+                              <span
+                                key={idx}
+                                className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-[#00cec9] hover:text-gray-900 transition-colors"
+                                style={{ fontFamily: "Montserrat, sans-serif" }}
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-                      <div className="absolute inset-0 rounded-full bg-[#00cec9] opacity-20 animate-ping" />
                     </div>
                   </div>
-
-                  {/* Date (outside the card) */}
-                  <div
-                    className="w-5/12 flex items-center"
-                    style={{
-                      justifyContent: forceLeft
-                        ? "flex-start" 
-                        : isLeft
-                        ? "flex-start"
-                        : "flex-end",
-                    }}
-                  >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-[#00cec9]/30">
-                      <Calendar className="w-5 h-5 text-[#00cec9]" />
-                      <span
-                        className="font-bold text-[#00cec9]"
-                        style={{ fontFamily: "Montserrat, sans-serif" }}
-                      >
-                        {exp.date}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
