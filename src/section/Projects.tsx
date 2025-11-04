@@ -161,7 +161,7 @@ export const Projects = () => {
     ] as const;
 
     return (
-        <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 w-full">
+        <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800 w-full">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white"
@@ -190,7 +190,7 @@ export const Projects = () => {
                     {filteredProjects.map((project) => (
                         <div
                             key={project.id}
-                            className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                            className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                         >
                             <div className="relative h-48 overflow-hidden group">
                                 <img

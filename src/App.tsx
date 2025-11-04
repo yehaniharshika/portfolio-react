@@ -1,11 +1,12 @@
-import {HeroPage} from "./components/HeroPage.tsx";
-import {Skills} from "./components/Skills.tsx";
+import {HeroPage} from "./section/HeroPage.tsx";
+import {Skills} from "./section/Skills.tsx";
 import {NavBar} from "./components/NavBar.tsx";
-import {Contact} from "./components/Contact.tsx";
+import {Contact} from "./section/Contact.tsx";
 
-import {Projects} from "./components/Projects.tsx";
-import {About} from "./components/About.tsx";
-import {Education} from "./components/Education.tsx";
+import {Projects} from "./section/Projects.tsx";
+import {About} from "./section/About.tsx";
+import {Education} from "./section/Education.tsx";
+import Experience from "./section/Experience.tsx";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <NavBar/>
         <HeroPage/>
         <About/>
+        <Experience/>
         <Education/>
         <Skills/>
         <Projects/>

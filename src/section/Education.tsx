@@ -3,15 +3,15 @@ import { FaGraduationCap } from "react-icons/fa";
 export const Education = () => {
     const educationData = [
         {
-            year: "2025 - Present",
+            year: "2026 - Present",
             title: "Bachelor of Science in Computer Science",
-            institution: "University of Bolton",
+            institution: "University of Bedfordshire",
             description: "Specializing in Computer Science, with a strong focus on Artificial Intelligence and Machine Learning. "
         },
         {
             year: "2023 - 2025",
             title: "Higher National Diploma in Software Engineering",
-            institution: "Institute of Java and Software Engineering",
+            institution: "Institute of Software Engineering(IJSE)",
             description: "A diploma focused on software development, system design, and Java programming, with emphasis on object-oriented design, database management, and modern web technologies."
         },
         {
@@ -29,7 +29,7 @@ export const Education = () => {
     ];
 
     return (
-        <section id="education" className="py-20 bg-gray-900 text-white w-full">
+        <section id="education" className="py-20 bg-gray-800 text-white w-full">
             <div className="container mx-auto px-4 md:px-6">
                 <h2 className="text-4xl font-bold mb-6 text-center"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}>
@@ -38,7 +38,7 @@ export const Education = () => {
 
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8" style={{marginTop:"50px"}}>
                     {educationData.map((edu, index) => (
-                        <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg relative min-h-[220px] flex flex-col justify-between text-left transition-all duration-300 ease-in-out hover:border-4 hover:border-[#00cec9]">
+                        <div key={index} className="bg-gray-900 p-6 rounded-lg shadow-lg relative min-h-[220px] flex flex-col justify-between text-left transition-all duration-300 ease-in-out hover:border-4 hover:border-[#00cec9]">
                             {/* Icon at top-left */}
                             <FaGraduationCap className="absolute top-4 left-4 text-[#00cec9] text-3xl" />
 

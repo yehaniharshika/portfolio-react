@@ -3,7 +3,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { FormEvent } from "react";
 import Swal from 'sweetalert2';
-import "../components/style/alert.css";
+import "../style/alert.css";
 
 export const Contact = () => {
     const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -73,7 +73,7 @@ export const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800 w-full">
+        <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900 w-full">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-12">
                     <h2
@@ -86,7 +86,7 @@ export const Contact = () => {
                         </span>
                     </h2>
                 </div>
-                <div className="max-w-8xl mx-auto bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden">
+                <div className="max-w-8xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                     <div className="md:flex">
                         <div className="md:w-2/4 bg-[#00cec9] dark:bg-indigo-700 text-white p-8" style={{backgroundColor: "#00cec9"}}>
                             <h3 className="text-2xl font-semibold mb-4" style={{fontFamily: "Montserrat, sans-serif"}}>Contact Information</h3>

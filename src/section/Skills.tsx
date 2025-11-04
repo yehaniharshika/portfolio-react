@@ -65,7 +65,7 @@ export const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="py-20 bg-white dark:bg-gray-800 w-full">
+        <section id="skills" className="py-20 bg-white dark:bg-gray-900 w-full">
             <div className="container mx-auto px-4 md:px-6 text-center">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     Technical <span style={{ fontFamily: 'Montserrat, sans-serif', color: "#00cec9" }}>Skills</span>
