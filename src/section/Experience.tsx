@@ -1,9 +1,7 @@
-import { useEffect, useRef } from "react";
-import * as THREE from "three";
+import { useRef } from "react";
 import { MapPin, Calendar, Briefcase, Building2 } from "lucide-react";
 
 const Experience = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const timelineItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const timelineLineRef = useRef<HTMLDivElement>(null);
 
@@ -52,100 +50,6 @@ const Experience = () => {
       icon: <Briefcase />,
     },
   ];
-
-  useEffect(() => {
-    if (!canvasRef.current) return;
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvasRef.current,
-      alpha: true,
-      antialias: true,
-    });
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    camera.position.z = 5;
-
-    const starsGeometry = new THREE.BufferGeometry();
-    const starCount = 500;
-    const positions = new Float32Array(starCount * 3);
-    for (let i = 0; i < starCount * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 20;
-    }
-    starsGeometry.setAttribute(
-      "position",
-      new THREE.BufferAttribute(positions, 3)
-    );
-    const starsMaterial = new THREE.PointsMaterial({
-      size: 0.02,
-      color: 0xffffff,
-      transparent: true,
-      opacity: 0.8,
-      blending: THREE.AdditiveBlending,
-    });
-    const stars = new THREE.Points(starsGeometry, starsMaterial);
-    scene.add(stars);
-
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particleCount = 50;
-    const particlePositions = new Float32Array(particleCount * 3);
-    for (let i = 0; i < particleCount * 3; i++) {
-      particlePositions[i] = (Math.random() - 0.5) * 15;
-    }
-    particlesGeometry.setAttribute(
-      "position",
-      new THREE.BufferAttribute(particlePositions, 3)
-    );
-    const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.08,
-      color: 0x00cec9,
-      transparent: true,
-      opacity: 0.6,
-      blending: THREE.AdditiveBlending,
-    });
-    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particles);
-
-    let mouseX = 0;
-    let mouseY = 0;
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-      mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      stars.rotation.y += 0.0002;
-      stars.rotation.x += 0.0001;
-      particles.rotation.y += 0.001;
-      particles.rotation.x += 0.0005;
-      camera.position.x += (mouseX * 0.3 - camera.position.x) * 0.05;
-      camera.position.y += (mouseY * 0.3 - camera.position.y) * 0.05;
-      renderer.render(scene, camera);
-    };
-    animate();
-
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("resize", handleResize);
-      renderer.dispose();
-    };
-  }, []);
 
   return (
     <>
@@ -214,12 +118,6 @@ const Experience = () => {
         id="experience"
         className="py-20 bg-gray-900 text-white w-full relative overflow-hidden min-h-screen"
       >
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          style={{ opacity: 0.4 }}
-        />
-
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
             <h2
