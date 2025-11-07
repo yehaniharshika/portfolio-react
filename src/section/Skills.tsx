@@ -67,10 +67,10 @@ export const Skills = () => {
     return (
         <section id="skills" className="py-20 bg-white dark:bg-gray-900 w-full">
             <div className="container mx-auto px-4 md:px-6 text-center">
-                <h2 className="text-4xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    Technical <span style={{ fontFamily: 'Montserrat, sans-serif', color: "#00cec9" }}>Skills</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    TECHNICAL <span style={{ fontFamily: 'Montserrat, sans-serif', color: "#00cec9" }}>SKILLS</span>
                 </h2>
-                <p className="mt-4 text-gray-600 dark:text-gray-300 text-lg" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <p className="mt-4 text-[16px] sm:text-base text-gray-600 dark:text-gray-300 font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     I have experience developing software using cutting-edge technologies, ensuring high-quality solutions tailored to meet business needs.
                 </p>
 
@@ -81,7 +81,7 @@ export const Skills = () => {
                             key={category}
                             onClick={() => setActiveCategory(category)}
                             className={`px-4 py-2 rounded-full text-white font-medium transition-all cursor-pointer duration-300 ${
-                                activeCategory === category ? "bg-[#00cec9]" : "bg-gray-500 hover:bg-[#00cec9]"
+                                activeCategory === category ? "bg-[#00cec9]" : "bg-gray-800 hover:bg-[#00cec9]"
                             }`}
                             style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
@@ -97,7 +97,7 @@ export const Skills = () => {
                         .map((tech) => (
                             <div
                                 key={tech.name}
-                                className="p-4 bg-white dark:bg-gray-600 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
+                                className="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
                             >
                                 {tech.icon}
                                 <h3 className="font-semibold text-gray-900 dark:text-white mt-3 text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>

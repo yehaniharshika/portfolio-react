@@ -31,9 +31,9 @@ export const Education = () => {
     return (
         <section id="education" className="py-20 bg-gray-800 text-white w-full">
             <div className="container mx-auto px-4 md:px-6">
-                <h2 className="text-4xl font-bold mb-6 text-center"
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-center"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    My <span style={{ color: "#00cec9" }}>Education</span>
+                    MY <span style={{ color: "#00cec9" }}>EDUCATION</span>
                 </h2>
 
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8" style={{marginTop:"50px"}}>

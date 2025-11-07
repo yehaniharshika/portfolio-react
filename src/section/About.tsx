@@ -13,14 +13,14 @@ export const About = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2
-            className="text-4xl font-bold text-gray-900 dark:text-white"
+            className="text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 dark:text-white text-uppercase"
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
-            About{" "}
+            ABOUT{" "}
             <span
               style={{ fontFamily: "Montserrat, sans-serif", color: "#00cec9" }}
             >
-              Me
+              ME
             </span>
           </h2>
         </motion.div>
@@ -49,9 +49,9 @@ export const About = () => {
               software developer with a strong foundation in modern
               technologies. I have successfully completed the{" "}
               <strong>Graduate Diploma in Software Engineering (GDSE)</strong>{" "}
-              at the <strong>Institute of Software Engineering (IJSE)</strong> and
-              a <strong>BSc (Hons) in Computer Science (Topup)</strong> at the{" "}
-              <strong> University of Bedfordshire.</strong>.
+              at the <strong>Institute of Software Engineering (IJSE)</strong>{" "}
+              and a <strong>BSc (Hons) in Computer Science (Topup)</strong> at
+              the <strong> University of Bedfordshire.</strong>.
             </p>
 
             <p

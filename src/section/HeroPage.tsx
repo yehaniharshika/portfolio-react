@@ -139,7 +139,7 @@ const ProfileImageWithEffects = () => {
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-30 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-40 transition-opacity duration-300" />
         
         {/* Profile Image */}
         <motion.img
@@ -157,9 +157,7 @@ const ProfileImageWithEffects = () => {
 const TypingAnimation = () => {
   const titles = [
     'Full Stack Developer',
-    'Frontend Developer',
-    'Backend Developer',
-    'Web App Developer'
+    'Web Developer'
   ];
   
   const [currentTitle, setCurrentTitle] = useState('');
@@ -219,7 +217,7 @@ export const HeroPage = () => {
       
       <section
         id="home"
-        className="relative w-full bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 pt-24 pb-50 overflow-hidden min-h-screen"
+        className="relative w-full bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 pt-20 pb-20 md:pt-24 md:pb-36 overflow-hidden"
       >
         {/* Starfield Background */}
         <StarfieldBackground />
@@ -250,7 +248,7 @@ export const HeroPage = () => {
               </motion.span>
               <br />
               <span
-                className="text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 mt-10 block"
+                className="text-[26px] md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 mt-10 block"
                 style={{ fontFamily: 'Montserrat, sans-serif', minHeight: '3rem' }}
               >
                 <TypingAnimation />
@@ -258,10 +256,9 @@ export const HeroPage = () => {
             </h1>
 
             <p
-              className="mt-4 text-lg text-gray-600 dark:text-gray-300"
+              className="mt-7 text-[16px] sm:text-base text-gray-600 dark:text-gray-300"
               style={{
                 fontFamily: 'Montserrat, sans-serif',
-                fontSize: "18px",
                 fontWeight: "500",
                 maxWidth: "700px",
                 backgroundColor: "transparent"
@@ -272,11 +269,11 @@ export const HeroPage = () => {
             </p>
 
             <motion.div
-              className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start"
+              className="mt-6 flex flex-row gap-3 justify-center md:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              style={{ marginTop: "80px" }}
+              style={{ marginTop: "60px" }}
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -286,7 +283,7 @@ export const HeroPage = () => {
                     behavior: "smooth",
                   })
                 }
-                className="px-6 py-3 text-white font-medium rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
+                className="px-4 sm:px-6 py-2 sm:py-3 text-white font-medium rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors text-[14px] sm:text-base"
                 style={{
                   fontFamily: 'Montserrat, sans-serif',
                   backgroundColor: "#00cec9",
@@ -299,12 +296,13 @@ export const HeroPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-white dark:bg-gray-800 text-[#00cec9] dark:text-[#00cec9] font-medium rounded-lg border border-[#00cec9] dark:border-[#00cec9] hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-white dark:bg-gray-800 text-[#00cec9] dark:text-[#00cec9] font-medium rounded-lg border border-[#00cec9] dark:border-[#00cec9] hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-[14px] sm:text-base"
                 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: "600", cursor: "pointer" }}
               >
                 Download Resume
               </motion.button>
             </motion.div>
+
           </motion.div>
 
           <ProfileImageWithEffects />

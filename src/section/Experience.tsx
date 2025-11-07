@@ -121,16 +121,17 @@ const Experience = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl font-bold mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-black mb-4"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
-              Work <span className="text-[#00cec9]">Experience</span>
+              WORK <span className="text-[#00cec9]">EXPERIENCE</span>
             </h2>
             <p
-              className="text-gray-300 text-lg mb-6"
+              className="text-[16px] sm:text-base text-gray-600 dark:text-gray-300 mb-6 font-medium"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
-              My professional journey
+              Here's a brief overview of my professional journey and the
+              experiences that have shaped my skills and expertise.
             </p>
           </div>
 

@@ -77,12 +77,12 @@ export const Contact = () => {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-12">
                     <h2
-                        className="text-4xl font-bold text-gray-900 dark:text-white"
+                        className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white"
                         style={{ fontFamily: "Montserrat, sans-serif" }}
                     >
-                        Contact{" "}
+                        CONTACT {" "}
                         <span style={{ fontFamily: "Montserrat, sans-serif", color: "#00cec9" }}>
-                            Me
+                            ME
                         </span>
                     </h2>
                 </div>
