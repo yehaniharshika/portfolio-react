@@ -96,7 +96,7 @@ export const Projects = () => {
       description:
         "A desktop-based library management system designed to facilitate book cataloging, member management, and lending operations.",
       image: libraSysImage,
-      tags: ["Java", "MySQL"],
+      tags: ["Java", "JavaFX", "MySQL"],
       link: "https://github.com/yehaniharshika/LibraSys-LibraryManagementSystem.git",
       category: "desktop",
     },
@@ -148,7 +148,7 @@ export const Projects = () => {
       category: "web",
     },
     {
-      id: 10,
+      id: 11,
       title: "Vehicore - Vehicle Data Management System",
       description:
         "A microservice-based vehicle data management system featuring CSV/Excel import, real-time notifications via Redis Pub/Sub, GraphQL API, automated vehicle age calculations, and bulk export capabilities with pagination and search.",
