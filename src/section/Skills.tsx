@@ -70,12 +70,12 @@ export const Skills = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     TECHNICAL <span style={{ fontFamily: 'Montserrat, sans-serif', color: "#00cec9" }}>SKILLS</span>
                 </h2>
-                <p className="mt-4 text-[16px] sm:text-base text-gray-600 dark:text-gray-300 font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <p className="mt-4 text-[16px] sm:text-base text-gray-600 dark:text-gray-300 font-medium p-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     I have experience developing software using cutting-edge technologies, ensuring high-quality solutions tailored to meet business needs.
                 </p>
 
-                {/* Skill Category Buttons */}
-                <div className="flex flex-wrap justify-center mt-6 space-x-3">
+                 {/* Skill Category Buttons */}
+                <div className="flex flex-wrap justify-center mt-6 gap-3 p-1">
                     {["frontend", "backend", "database", "mobile", "other"].map((category) => (
                         <button
                             key={category}

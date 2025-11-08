@@ -7,6 +7,7 @@ import {Projects} from "./section/Projects.tsx";
 import {About} from "./section/About.tsx";
 import {Education} from "./section/Education.tsx";
 import Experience from "./section/Experience.tsx";
+import Footer from "./section/Footer.tsx";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Skills/>
         <Projects/>
         <Contact/>
+        <Footer/>
       </div>
   )
 }

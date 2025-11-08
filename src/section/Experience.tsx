@@ -287,7 +287,7 @@ const Experience = () => {
                     </div>
 
                     {/* Mobile Layout */}
-                    <div className="md:hidden">
+                    <div className="md:hidden p-0.5">
                       {/* Date Badge - Above Card */}
                       <div className="timeline-date-wrapper flex mb-4 justify-start">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-[#00cec9]/30">

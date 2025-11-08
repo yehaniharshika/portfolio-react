@@ -13,7 +13,7 @@ export const About = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2
-            className="text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 dark:text-white text-uppercase"
+            className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white text-uppercase"
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             ABOUT{" "}
