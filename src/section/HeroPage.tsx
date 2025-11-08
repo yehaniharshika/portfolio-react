@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import * as THREE from 'three';
-import profileImage from '../assets/photo.jpg';
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
+import profileImage from "../assets/photo.jpg";
 
 const StarfieldBackground = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef(null);
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -34,7 +33,7 @@ const StarfieldBackground = () => {
       positions[i] = (Math.random() - 0.5) * 20;
     }
     starsGeometry.setAttribute(
-      'position',
+      "position",
       new THREE.BufferAttribute(positions, 3)
     );
     const starsMaterial = new THREE.PointsMaterial({
@@ -55,7 +54,7 @@ const StarfieldBackground = () => {
       particlePositions[i] = (Math.random() - 0.5) * 15;
     }
     particlesGeometry.setAttribute(
-      'position',
+      "position",
       new THREE.BufferAttribute(particlePositions, 3)
     );
     const particlesMaterial = new THREE.PointsMaterial({
@@ -71,11 +70,15 @@ const StarfieldBackground = () => {
     let mouseX = 0;
     let mouseY = 0;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    interface MouseMoveHandler {
+      (e: MouseEvent): void;
+    }
+
+    const handleMouseMove: MouseMoveHandler = (e: MouseEvent): void => {
       mouseX = (e.clientX / window.innerWidth) * 2 - 1;
       mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     const animate = () => {
       requestAnimationFrame(animate);
@@ -94,11 +97,11 @@ const StarfieldBackground = () => {
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
       renderer.dispose();
     };
   }, []);
@@ -114,53 +117,45 @@ const StarfieldBackground = () => {
 
 const ProfileImageWithEffects = () => {
   return (
-    <div className="relative w-72 h-72 md:w-96 md:h-96" style={{ marginTop: '30px' }}>
+    <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 mt-8 md:mt-0">
       {/* Pulsing glow rings */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div 
+        <div
           className="absolute w-full h-full rounded-full border-2 border-[#00cec9] opacity-20 animate-pulse"
-          style={{ 
-            animationDuration: '3s',
-            boxShadow: '0 0 30px rgba(0, 206, 201, 0.3)'
+          style={{
+            animationDuration: "3s",
+            boxShadow: "0 0 30px rgba(0, 206, 201, 0.3)",
           }}
         />
       </div>
-      
+
       {/* Profile Image Container */}
-      <motion.div 
+      <div
         className="relative w-full h-full rounded-full overflow-hidden shadow-2xl group"
         style={{
-          border: '4px solid rgba(255, 255, 255, 0.3)',
-          boxShadow: '0 10px 40px rgba(0, 206, 201, 0.3)'
+          border: "4px solid rgba(255, 255, 255, 0.3)",
+          boxShadow: "0 10px 40px rgba(0, 206, 201, 0.3)",
         }}
-        whileHover={{ 
-          scale: 1.05,
-        }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-40 transition-opacity duration-300" />
-        
+
         {/* Profile Image */}
-        <motion.img
+        <img
+          className="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center"
           src={profileImage}
           alt="Yehani Harshika"
-          className="w-full h-full object-cover"
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
+          style={{ objectFit: "cover" }}
         />
-      </motion.div>
+      </div>
     </div>
   );
 };
 
 const TypingAnimation = () => {
-  const titles = [
-    'Full Stack Developer',
-    'Web Developer'
-  ];
-  
-  const [currentTitle, setCurrentTitle] = useState('');
+  const titles = ["Full Stack Developer", "Web Developer"];
+
+  const [currentTitle, setCurrentTitle] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
@@ -191,7 +186,7 @@ const TypingAnimation = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, currentIndex, titles]);
+  }, [charIndex, isDeleting, currentIndex]);
 
   return (
     <span className="inline-block relative">
@@ -201,7 +196,7 @@ const TypingAnimation = () => {
   );
 };
 
-export const HeroPage = () => {
+export default function HeroPage() {
   return (
     <>
       <style>{`
@@ -214,100 +209,86 @@ export const HeroPage = () => {
           animation: blink 1s infinite;
         }
       `}</style>
-      
+
       <section
         id="home"
-        className="relative w-full bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 pt-20 pb-20 md:pt-24 md:pb-36 overflow-hidden"
+        className="relative w-full bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 pt-20 pb-20 md:pb-24 lg:pb-36 overflow-hidden"
       >
         {/* Starfield Background */}
         <StarfieldBackground />
 
-        <div className="container mx-auto px-4 md:px-6 pt-16 flex flex-col md:flex-row items-center justify-between relative z-10">
-          <motion.div
-            className="md:w-1/2 text-center md:text-left mb-10 md:mb-0"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h1 className="text-xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-8 md:pt-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6 lg:gap-12 relative z-10">
+          {/* Text Content */}
+          <div className="w-full  text-center md:text-left">
+            <h1 className="text-xl md:text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
               <span
-                className="text-lg md:text-3xl lg:text-4xl"
-                style={{ fontSize: "20px", fontFamily: 'Montserrat, sans-serif' }}
+                className="text-lg md:text-2xl lg:text-4xl block mb-2"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 👋 Hi, I'm
               </span>
-              <br />
-              <motion.span
-                className="text-5xl md:text-6xl lg:text-7xl"
-                style={{ fontFamily: "'Lilita One', sans-serif", color: "#00cec9" }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.2, delay: 0.3 }}
+
+              <span
+                className="text-5xl md:text-5xl lg:text-7xl block my-3"
+                style={{
+                  fontFamily: "'Lilita One', sans-serif",
+                  color: "#00cec9",
+                }}
               >
                 Yehani Harshika
-              </motion.span>
-              <br />
+              </span>
+
               <span
-                className="text-[26px] md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 mt-10 block"
-                style={{ fontFamily: 'Montserrat, sans-serif', minHeight: '3rem' }}
+                className="text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 block mt-4"
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  minHeight: "3rem",
+                }}
               >
                 <TypingAnimation />
               </span>
             </h1>
 
             <p
-              className="mt-7 text-[16px] sm:text-base text-gray-600 dark:text-gray-300"
+              className="mt-6 md:mt-7 text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto md:mx-0"
               style={{
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: "Montserrat, sans-serif",
                 fontWeight: "500",
-                maxWidth: "700px",
-                backgroundColor: "transparent"
+                backgroundColor: "transparent",
               }}
             >
-              A passionate Software Engineer and Full-Stack Developer dedicated to designing intuitive,
-              high-performing, and visually engaging digital solutions.
+              A passionate Software Engineer and Full-Stack Developer dedicated
+              to designing intuitive, high-performing, and visually engaging
+              digital solutions.
             </p>
 
-            <motion.div
-              className="mt-6 flex flex-row gap-3 justify-center md:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              style={{ marginTop: "60px" }}
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <div className="mt-8 md:mt-10 lg:mt-12 flex flex-row flex-wrap gap-4 justify-center md:justify-start items-center">
+              <button
                 onClick={() =>
-                  document.getElementById("contact")?.scrollIntoView({
-                    behavior: "smooth",
-                  })
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="px-4 sm:px-6 py-2 sm:py-3 text-white font-medium rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors text-[14px] sm:text-base"
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  backgroundColor: "#00cec9",
-                  fontWeight: "600",
-                  cursor: "pointer"
-                }}
+                className="px-6 md:px-8 py-3 bg-[#00cec9] text-white font-semibold rounded-lg hover:bg-opacity-90 transition-all text-sm md:text-base whitespace-nowrap min-w-[140px]"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 Contact Me
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-4 sm:px-6 py-2 sm:py-3 bg-white dark:bg-gray-800 text-[#00cec9] dark:text-[#00cec9] font-medium rounded-lg border border-[#00cec9] dark:border-[#00cec9] hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-[14px] sm:text-base"
-                style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: "600", cursor: "pointer" }}
+              </button>
+              <button
+                className="px-6 md:px-8 py-3 bg-white dark:bg-gray-800 text-[#00cec9] font-semibold rounded-lg border-2 border-[#00cec9] hover:bg-gray-50 dark:hover:bg-gray-700 transition-all text-sm md:text-base whitespace-nowrap min-w-[140px]"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 Download Resume
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
+          </div>
 
-          </motion.div>
-
-          <ProfileImageWithEffects />
+          {/* Profile Image */}
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+            <ProfileImageWithEffects />
+          </div>
         </div>
       </section>
     </>
   );
-};
+}
