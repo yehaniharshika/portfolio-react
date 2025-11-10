@@ -81,7 +81,7 @@ export const About = () => {
                   fontWeight: "700",
                 }}
               >
-                Years Experience
+                YEARS OF EXPERIENCE
               </div>
             </motion.div>
 
@@ -96,7 +96,7 @@ export const About = () => {
                   fontWeight: "700",
                 }}
               >
-                Projects Completed
+                PROJECTS COMPLETED
               </div>
             </motion.div>
 
@@ -111,7 +111,7 @@ export const About = () => {
                   fontWeight: "700",
                 }}
               >
-                Certifications
+                CERTIFICATES
               </div>
             </motion.div>
           </motion.div>

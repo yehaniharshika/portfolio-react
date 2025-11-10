@@ -3,7 +3,7 @@ import { FaGraduationCap } from "react-icons/fa";
 export const Education = () => {
     const educationData = [
         {
-            year: "2026 - Present",
+            year: "Expected start: 2026",
             title: "Bachelor of Science in Computer Science",
             institution: "University of Bedfordshire",
             description: "Specializing in Computer Science, with a strong focus on Artificial Intelligence and Machine Learning. "

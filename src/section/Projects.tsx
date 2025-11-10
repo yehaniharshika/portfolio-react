@@ -46,7 +46,7 @@ export const Projects = () => {
       description:
         "An e-commerce platform for ordering and delivering flowers, featuring real-time order tracking, secure payments, and a user-friendly interface.",
       image: flowerShopImage,
-      tags: ["React", "Node.js", "Express.js", "MongoDB"],
+      tags: ["React", "Node.js", "Express.js", "MongoDB", "Stripe"],
       link: "https://github.com/yehaniharshika/BlossomBay-flower-delivery-app.git",
       category: "web",
     },
