@@ -212,7 +212,7 @@ export default function HeroPage() {
 
       <section
         id="home"
-        className="relative w-full bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 pt-20 pb-20 md:pb-24 lg:pb-48 overflow-hidden"
+        className="relative w-full bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 pt-20 pb-20 md:pb-24 lg:pb-50 overflow-hidden"
       >
         {/* Starfield Background */}
         <StarfieldBackground />

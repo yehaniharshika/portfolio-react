@@ -88,7 +88,7 @@ export const About = () => {
             <GoDash className="text-gray-400 text-8xl rotate-90 hidden md:block" />
 
             <motion.div className="text-center" whileHover={{ scale: 1.1 }}>
-              <AnimatedCounter end={20} duration={2.5} suffix="+" />
+              <AnimatedCounter end={30} duration={2.5} suffix="+" />
               <div
                 className="text-gray-600 dark:text-gray-300"
                 style={{
