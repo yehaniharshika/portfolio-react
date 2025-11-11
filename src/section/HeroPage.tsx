@@ -230,7 +230,7 @@ export default function HeroPage() {
         {/* Starfield Background */}
         <StarfieldBackground />
 
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-8 md:pt-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6 lg:gap-12 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 lg:px-1 pt-8 md:pt-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6 lg:gap-12 relative z-10">
           {/* Text Content */}
           <div className="w-full  text-center md:text-left">
             <h1 className="text-xl md:text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">

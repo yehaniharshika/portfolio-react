@@ -89,7 +89,7 @@ export const Skills = () => {
 
     return (
         <section id="skills" className="py-20 bg-white dark:bg-gray-900 w-full">
-            <div className="container mx-auto px-4 md:px-6 text-center">
+            <div className="container mx-auto px-4 md:px-0 text-center">
                 <h2 
                     className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white" 
                     style={{ fontFamily: 'Montserrat, sans-serif' }}

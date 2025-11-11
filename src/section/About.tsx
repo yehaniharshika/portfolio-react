@@ -20,7 +20,7 @@ export const About = () => {
 
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-800 w-full">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-0">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 50 }}

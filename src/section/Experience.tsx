@@ -132,7 +132,7 @@ const Experience = () => {
         id="experience"
         className="py-20 bg-gray-900 text-white w-full relative overflow-hidden min-h-screen"
       >
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="container mx-auto px-4 md:px-0 relative z-10">
           <div className="text-center mb-16" data-aos="fade-left">
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-black mb-4"
