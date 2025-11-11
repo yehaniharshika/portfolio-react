@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaAngular, FaNodeJs, FaPython,
     FaJava, FaDatabase, FaMobileAlt, FaGithub, FaGitAlt, FaAndroid
@@ -24,6 +24,29 @@ import {VscVscode} from "react-icons/vsc";
 
 export const Skills = () => {
     const [activeCategory, setActiveCategory] = useState("frontend");
+
+    // Initialize AOS
+    useEffect(() => {
+        // @ts-ignore
+        if (typeof AOS !== 'undefined') {
+            // @ts-ignore
+            AOS.init({
+                duration: 800,
+                once: false,
+                offset: 100,
+                easing: 'ease-in-out',
+            });
+        }
+    }, []);
+
+    // Refresh AOS when category changes
+    useEffect(() => {
+        // @ts-ignore
+        if (typeof AOS !== 'undefined') {
+            // @ts-ignore
+            AOS.refresh();
+        }
+    }, [activeCategory]);
 
     const technologies = [
         { name: "HTML", icon: <FaHtml5 className="w-10 h-10 text-orange-600" />, category: "frontend" },
@@ -67,16 +90,29 @@ export const Skills = () => {
     return (
         <section id="skills" className="py-20 bg-white dark:bg-gray-900 w-full">
             <div className="container mx-auto px-4 md:px-6 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <h2 
+                    className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white" 
+                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    data-aos="fade-left"
+                >
                     TECHNICAL <span style={{ fontFamily: 'Montserrat, sans-serif', color: "#00cec9" }}>SKILLS</span>
                 </h2>
-                <p className="mt-4 text-[16px] sm:text-base text-gray-600 dark:text-gray-300 font-medium p-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <p 
+                    className="mt-4 text-[16px] sm:text-base text-gray-600 dark:text-gray-300 font-medium p-1" 
+                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
                     I have experience developing software using cutting-edge technologies, ensuring high-quality solutions tailored to meet business needs.
                 </p>
 
                  {/* Skill Category Buttons */}
-                <div className="flex flex-wrap justify-center mt-6 gap-3 p-1">
-                    {["frontend", "backend", "database", "mobile", "other"].map((category) => (
+                <div 
+                    className="flex flex-wrap justify-center mt-6 gap-3 p-1"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    {["frontend", "backend", "database", "mobile", "other"].map((category, index) => (
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}
@@ -84,6 +120,8 @@ export const Skills = () => {
                                 activeCategory === category ? "bg-[#00cec9]" : "bg-gray-800 hover:bg-[#00cec9]"
                             }`}
                             style={{ fontFamily: 'Montserrat, sans-serif' }}
+                            data-aos="zoom-in"
+                            data-aos-delay={300 + index * 50}
                         >
                             {category.charAt(0).toUpperCase() + category.slice(1)}
                         </button>
@@ -94,13 +132,18 @@ export const Skills = () => {
                 <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8 mt-10">
                     {technologies
                         .filter((tech) => tech.category === activeCategory)
-                        .map((tech) => (
+                        .map((tech, index) => (
                             <div
                                 key={tech.name}
                                 className="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
+                                data-aos="flip-up"
+                                data-aos-delay={index * 50}
                             >
                                 {tech.icon}
-                                <h3 className="font-semibold text-gray-900 dark:text-white mt-3 text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                <h3 
+                                    className="font-semibold text-gray-900 dark:text-white mt-3 text-base" 
+                                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                                >
                                     {tech.name}
                                 </h3>
                             </div>

@@ -219,7 +219,7 @@ export const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800 w-full">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12" data-aos="fade-down">
+        <div className="text-center mb-12" data-aos="fade-left">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white"
             style={{ fontFamily: "Montserrat, sans-serif" }}

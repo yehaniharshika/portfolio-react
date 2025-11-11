@@ -197,6 +197,19 @@ const TypingAnimation = () => {
 };
 
 export default function HeroPage() {
+  useEffect(() => {
+    // @ts-ignore
+    if (typeof AOS !== "undefined") {
+      // @ts-ignore
+      AOS.init({
+        duration: 1000,
+        once: false,
+        offset: 100,
+        easing: "ease-in-out",
+      });
+    }
+  }, []);
+
   return (
     <>
       <style>{`
@@ -223,6 +236,7 @@ export default function HeroPage() {
             <h1 className="text-xl md:text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
               <span
                 className="text-lg md:text-2xl lg:text-4xl block mb-2"
+                data-aos="fade-right"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 👋 Hi, I'm
@@ -230,6 +244,7 @@ export default function HeroPage() {
 
               <span
                 className="text-5xl md:text-5xl lg:text-7xl block my-3"
+                data-aos="fade-right"
                 style={{
                   fontFamily: "'Lilita One', sans-serif",
                   color: "#00cec9",
@@ -240,6 +255,7 @@ export default function HeroPage() {
 
               <span
                 className="text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 block mt-4"
+                data-aos="fade-right"
                 style={{
                   fontFamily: "Montserrat, sans-serif",
                   minHeight: "3rem",
@@ -256,13 +272,14 @@ export default function HeroPage() {
                 fontWeight: "500",
                 backgroundColor: "transparent",
               }}
+              data-aos="fade-right"
             >
               A passionate Software Engineer and Full-Stack Developer dedicated
               to designing intuitive, high-performing, and visually engaging
               digital solutions.
             </p>
 
-            <div className="mt-8 md:mt-10 lg:mt-12 flex flex-row flex-wrap gap-4 justify-center md:justify-start items-center">
+            <div className="mt-8 md:mt-10 lg:mt-12 flex flex-row flex-wrap gap-4 justify-center md:justify-start items-center" data-aos="fade-right">
               <button
                 onClick={() =>
                   document
@@ -284,7 +301,7 @@ export default function HeroPage() {
           </div>
 
           {/* Profile Image */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end" data-aos="fade-left">
             <ProfileImageWithEffects />
           </div>
         </div>

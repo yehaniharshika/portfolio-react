@@ -1,9 +1,23 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { MapPin, Calendar, Briefcase, Building2 } from "lucide-react";
 
 const Experience = () => {
   const timelineItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const timelineLineRef = useRef<HTMLDivElement>(null);
+
+  // Initialize AOS
+  useEffect(() => {
+    // @ts-ignore
+    if (typeof AOS !== 'undefined') {
+      // @ts-ignore
+      AOS.init({
+        duration: 1000,
+        once: false,
+        offset: 100,
+        easing: 'ease-in-out',
+      });
+    }
+  }, []);
 
   const experiences = [
     {
@@ -119,7 +133,7 @@ const Experience = () => {
         className="py-20 bg-gray-900 text-white w-full relative overflow-hidden min-h-screen"
       >
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-left">
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-black mb-4"
               style={{ fontFamily: "Montserrat, sans-serif" }}
@@ -129,6 +143,8 @@ const Experience = () => {
             <p
               className="text-[16px] sm:text-base text-gray-600 dark:text-gray-300 mb-6 font-medium"
               style={{ fontFamily: "Montserrat, sans-serif" }}
+              data-aos="fade-left"
+              data-aos-delay="100"
             >
               Here's a brief overview of my professional journey and the
               experiences that have shaped my skills and expertise.
@@ -153,9 +169,15 @@ const Experience = () => {
                       timelineItemsRef.current[index] = el;
                     }}
                     className="timeline-item relative"
+                    data-aos={isLeft ? "fade-right" : "fade-left"}
+                    data-aos-delay={index * 200}
                   >
                     {/* Timeline Icon */}
-                    <div className="timeline-icon-wrapper absolute left-1/2 transform -translate-x-1/2 flex justify-center z-10">
+                    <div 
+                      className="timeline-icon-wrapper absolute left-1/2 transform -translate-x-1/2 flex justify-center z-10"
+                      data-aos="zoom-in"
+                      data-aos-delay={index * 200 + 100}
+                    >
                       <div className="relative">
                         <div
                           className="icon-circle w-20 h-20 rounded-full bg-gradient-to-br from-[#00cec9] to-cyan-700 flex items-center justify-center text-4xl shadow-2xl border-4 border-white"
@@ -180,6 +202,8 @@ const Experience = () => {
                           className={`timeline-date-wrapper flex mb-4 ${
                             exp.id === 1 ? "justify-start" : isLeft ? "justify-end" : "justify-start"
                           }`}
+                          data-aos="fade-up"
+                          data-aos-delay={index * 200 + 150}
                         >
                           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-[#00cec9]/30">
                             <Calendar className="w-5 h-5 text-[#00cec9]" />
@@ -192,7 +216,11 @@ const Experience = () => {
                           </div>
                         </div>
 
-                        <div className="content-inner p-6 rounded-2xl shadow-2xl hover:shadow-[#00cec9]/50 hover:border-[#00cec9] transition-all duration-500 transform hover:scale-105 border border-white/10">
+                        <div 
+                          className="content-inner p-6 rounded-2xl shadow-2xl hover:shadow-[#00cec9]/50 hover:border-[#00cec9] transition-all duration-500 transform hover:scale-105 border border-white/10"
+                          data-aos="flip-up"
+                          data-aos-delay={index * 200 + 200}
+                        >
                           <div
                             className="flex items-start gap-3 mb-3"
                             style={{
@@ -271,6 +299,8 @@ const Experience = () => {
                                 key={idx}
                                 className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-[#00cec9] hover:text-gray-900 transition-colors"
                                 style={{ fontFamily: "Montserrat, sans-serif" }}
+                                data-aos="zoom-in"
+                                data-aos-delay={index * 200 + 300 + idx * 50}
                               >
                                 {skill}
                               </span>
@@ -289,7 +319,11 @@ const Experience = () => {
                     {/* Mobile Layout */}
                     <div className="md:hidden p-0.5">
                       {/* Date Badge - Above Card */}
-                      <div className="timeline-date-wrapper flex mb-4 justify-start">
+                      <div 
+                        className="timeline-date-wrapper flex mb-4 justify-start"
+                        data-aos="fade-right"
+                        data-aos-delay={index * 150}
+                      >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-[#00cec9]/30">
                           <Calendar className="w-5 h-5 text-[#00cec9]" />
                           <span
@@ -302,7 +336,11 @@ const Experience = () => {
                       </div>
 
                       {/* Content Card */}
-                      <div className="timeline-content">
+                      <div 
+                        className="timeline-content"
+                        data-aos="fade-up"
+                        data-aos-delay={index * 150 + 100}
+                      >
                         <div className="content-inner p-6 rounded-2xl shadow-2xl hover:shadow-[#00cec9]/50 hover:border-[#00cec9] transition-all duration-500 border border-white/10">
                           <div className="flex items-start gap-3 mb-3">
                             <div className="flex-1">
@@ -356,6 +394,8 @@ const Experience = () => {
                                 key={idx}
                                 className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-[#00cec9] hover:text-gray-900 transition-colors"
                                 style={{ fontFamily: "Montserrat, sans-serif" }}
+                                data-aos="zoom-in"
+                                data-aos-delay={index * 150 + 200 + idx * 30}
                               >
                                 {skill}
                               </span>

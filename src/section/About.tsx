@@ -1,8 +1,23 @@
 import { motion } from "framer-motion";
 import { GoDash } from "react-icons/go";
 import { AnimatedCounter } from "../components/AnimatedCounter";
+import { useEffect } from "react";
 
 export const About = () => {
+  // Initialize AOS
+  useEffect(() => {
+    // @ts-ignore
+    if (typeof AOS !== "undefined") {
+      // @ts-ignore
+      AOS.init({
+        duration: 1000,
+        once: false,
+        offset: 100,
+        easing: "ease-in-out",
+      });
+    }
+  }, []);
+
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-800 w-full">
       <div className="container mx-auto px-4 md:px-6">
@@ -15,6 +30,7 @@ export const About = () => {
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white text-uppercase"
             style={{ fontFamily: "Montserrat, sans-serif" }}
+            data-aos="fade-left"
           >
             ABOUT{" "}
             <span

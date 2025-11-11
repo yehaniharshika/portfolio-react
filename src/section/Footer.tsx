@@ -96,7 +96,7 @@ const Footer = () => {
           <p className="text-gray-600 dark:text-gray-400">
             © {new Date().getFullYear()} Yehani Pamunuwa. All rights reserved.
           </p>
-          <p className="font-medium text-[#00cec9] flex items-center gap-2">
+          <p className="font-medium text-[#00cec9] flex items-center gap-1">
             May the Code be with you <span className="text-yellow-400">🖤</span>
           </p>
         </div>
