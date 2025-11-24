@@ -267,7 +267,7 @@ export const Contact = () => {
                                 <div data-aos="fade-up" data-aos-delay="1000">
                                     <button
                                         type="submit"
-                                        className="px-8 py-3 bg-[#00cec9] text-white font-bold rounded-md hover:bg-[#00b8b3] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                                        className="px-8 py-3 bg-[#00cec9] text-white font-bold rounded-md hover:bg-[#00b8b3] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                                         style={{ fontFamily: "Montserrat, sans-serif" }}
                                     >
                                         Send Message

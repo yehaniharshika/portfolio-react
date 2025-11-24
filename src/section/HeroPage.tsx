@@ -290,14 +290,14 @@ export default function HeroPage() {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="px-6 md:px-8 py-3 bg-[#00cec9] text-white font-semibold rounded-lg hover:bg-opacity-90 transition-all text-sm md:text-base whitespace-nowrap min-w-[140px]"
+                className="px-6 md:px-8 py-3 bg-[#00cec9] text-white font-semibold rounded-lg hover:bg-opacity-90 transition-all text-sm md:text-base whitespace-nowrap min-w-[140px] cursor-pointer"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 Contact Me
               </button>
               <button
                 onClick={() => window.open(resumePDF, "_blank")}
-                className="px-6 md:px-8 py-3 bg-white dark:bg-gray-800 text-[#00cec9] font-semibold rounded-lg border-2 border-[#00cec9] hover:bg-gray-50 dark:hover:bg-gray-700 transition-all text-sm md:text-base whitespace-nowrap min-w-[140px]"
+                className="px-6 md:px-8 py-3 bg-white dark:bg-gray-800 text-[#00cec9] font-semibold rounded-lg border-2 border-[#00cec9] hover:bg-gray-50 dark:hover:bg-gray-700 transition-all text-sm md:text-base whitespace-nowrap min-w-[140px] cursor-pointer"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 Download Resume
