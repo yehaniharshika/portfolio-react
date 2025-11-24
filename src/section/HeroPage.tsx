@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import profileImage from "../assets/photo.jpg";
+import resumePDF from "../assets/H.M. Yehani Harshika Pamunuwa Resume.pdf";
 
 const StarfieldBackground = () => {
   const canvasRef = useRef(null);
@@ -279,7 +280,10 @@ export default function HeroPage() {
               digital solutions.
             </p>
 
-            <div className="mt-8 md:mt-10 lg:mt-12 flex flex-row flex-wrap gap-4 justify-center md:justify-start items-center" data-aos="fade-right">
+            <div
+              className="mt-8 md:mt-10 lg:mt-12 flex flex-row flex-wrap gap-4 justify-center md:justify-start items-center"
+              data-aos="fade-right"
+            >
               <button
                 onClick={() =>
                   document
@@ -292,6 +296,7 @@ export default function HeroPage() {
                 Contact Me
               </button>
               <button
+                onClick={() => window.open(resumePDF, "_blank")}
                 className="px-6 md:px-8 py-3 bg-white dark:bg-gray-800 text-[#00cec9] font-semibold rounded-lg border-2 border-[#00cec9] hover:bg-gray-50 dark:hover:bg-gray-700 transition-all text-sm md:text-base whitespace-nowrap min-w-[140px]"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
@@ -301,7 +306,10 @@ export default function HeroPage() {
           </div>
 
           {/* Profile Image */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end" data-aos="fade-left">
+          <div
+            className="w-full md:w-1/2 flex justify-center md:justify-end"
+            data-aos="fade-left"
+          >
             <ProfileImageWithEffects />
           </div>
         </div>
