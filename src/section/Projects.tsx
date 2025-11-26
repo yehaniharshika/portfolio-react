@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Globe, Monitor, Smartphone } from "lucide-react";
 import mediTrackImage from "../assets/mediTrack.jpg";
 import greenShadowImage from "../assets/greenShadow.png";
@@ -28,29 +28,6 @@ export const Projects = () => {
   const [activeCategory, setActiveCategory] = useState<
     "web" | "mobile" | "desktop"
   >("web");
-
-  // Initialize AOS
-  useEffect(() => {
-    // @ts-ignore
-    if (typeof AOS !== 'undefined') {
-      // @ts-ignore
-      AOS.init({
-        duration: 1000,
-        once: false,
-        offset: 100,
-        easing: 'ease-in-out',
-      });
-    }
-  }, []);
-
-  // Refresh AOS when category changes
-  useEffect(() => {
-    // @ts-ignore
-    if (typeof AOS !== 'undefined') {
-      // @ts-ignore
-      AOS.refresh();
-    }
-  }, [activeCategory]);
 
   const projects: Project[] = [
     {
@@ -219,7 +196,7 @@ export const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800 w-full">
       <div className="container mx-auto px-4 md:px-0">
-        <div className="text-center mb-12" data-aos="fade-left">
+        <div className="text-center mb-12">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white"
             style={{ fontFamily: "Montserrat, sans-serif" }}
@@ -232,17 +209,11 @@ export const Projects = () => {
             </span>
           </h2>
         </div>
-        <div 
-          className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          {categories.map(({ id, label, icon: Icon }, index) => (
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          {categories.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
               onClick={() => setActiveCategory(id)}
-              data-aos="zoom-in"
-              data-aos-delay={200 + index * 100}
               className={`flex items-center px-6 py-3 rounded-lg transition-all duration-300 cursor-pointer border border-gray-700 ${
                 activeCategory === id
                   ? "bg-[#00cec9] dark:bg-[#00cec9] text-white "
@@ -256,11 +227,9 @@ export const Projects = () => {
           ))}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
               className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="relative h-48 overflow-hidden group">

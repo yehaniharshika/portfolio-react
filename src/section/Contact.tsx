@@ -88,7 +88,7 @@ export const Contact = () => {
         <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900 w-full">
             <div className="container mx-auto px-4 md:px-0">
                 {/* Section Title */}
-                <div className="text-center mb-12" data-aos="fade-left">
+                <div className="text-center mb-12">
                     <h2
                         className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white"
                         style={{ fontFamily: "Montserrat, sans-serif" }}
@@ -103,8 +103,7 @@ export const Contact = () => {
                 {/* Contact Card */}
                 <div 
                     className="max-w-8xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
-                    data-aos="fade-up"
-                    data-aos-delay="200"
+                   
                 >
                     <div className="md:flex">
                         {/* Left Side - Contact Info */}
@@ -141,8 +140,7 @@ export const Contact = () => {
                                     <div 
                                         key={index} 
                                         className="flex items-start"
-                                        data-aos="fade-up"
-                                        data-aos-delay={600 + index * 100}
+                                        
                                     >
                                         <div className="mr-4 mt-1">{item.icon}</div>
                                         <div>

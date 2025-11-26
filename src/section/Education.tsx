@@ -1,21 +1,6 @@
-import { useEffect } from "react";
 import { FaGraduationCap } from "react-icons/fa";
 
 export const Education = () => {
-  // Initialize AOS
-  useEffect(() => {
-    // @ts-ignore
-    if (typeof AOS !== "undefined") {
-      // @ts-ignore
-      AOS.init({
-        duration: 1000,
-        once: false,
-        offset: 100,
-        easing: "ease-in-out",
-      });
-    }
-  }, []);
-
   const educationData = [
     {
       year: "2025 - Present",
@@ -53,7 +38,6 @@ export const Education = () => {
         <h2
           className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-center"
           style={{ fontFamily: "Montserrat, sans-serif" }}
-          data-aos="fade-left"
         >
           MY <span style={{ color: "#00cec9" }}>EDUCATION</span>
         </h2>
@@ -66,15 +50,9 @@ export const Education = () => {
             <div
               key={index}
               className="bg-gray-900 p-6 rounded-lg shadow-lg relative min-h-[220px] flex flex-col justify-between text-left transition-all duration-300 ease-in-out hover:border-4 hover:border-[#00cec9]"
-              data-aos="fade-up"
-              data-aos-delay={index * 150}
             >
               {/* Icon at top-left */}
-              <FaGraduationCap
-                className="absolute top-4 left-4 text-[#00cec9] text-3xl"
-                data-aos="zoom-in"
-                data-aos-delay={index * 150 + 100}
-              />
+              <FaGraduationCap className="absolute top-4 left-4 text-[#00cec9] text-3xl" />
 
               <span
                 className="absolute top-4 right-4 text-gray-400 text-sm"
