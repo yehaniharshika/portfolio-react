@@ -64,7 +64,7 @@ const Footer = () => {
                 >
                   <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   <span className="break-all text-base sm:text-[16px]">
-                    pamunuwayehaniharshika@gmail.com
+                    yehanipamunuwa@gmail.com
                   </span>
                 </a>
 

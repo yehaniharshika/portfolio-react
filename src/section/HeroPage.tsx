@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
 import type { ReactNode } from "react";
 import profileImage from "../assets/Student-photo.png";
+import resumePdf from "../assets/cv/H.M. Yehani_Pamunuwa_CV.pdf"; // Vite turns this into a real URL
 
 /* ===================== EDIT THESE ===================== */
 const NAME = "Yehani Harshika";
-const RESUME_URL = "/Yehani-Harshika-Resume.pdf"; // put your PDF in the project's /public folder
+const RESUME_URL = resumePdf;
 /* ====================================================== */
 
 const heroCss = `
