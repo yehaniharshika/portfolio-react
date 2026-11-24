@@ -9,7 +9,6 @@ import {
   FaPython,
   FaJava,
   FaDatabase,
-  FaMobileAlt,
   FaGithub,
   FaGitAlt,
   FaAndroid,
