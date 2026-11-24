@@ -134,7 +134,7 @@ export const Contact = () => {
                             <div className="space-y-6">
                                 {[
                                     { icon: <FaMapMarkerAlt className="h-6 w-6 text-indigo-100" />, label: "Location", value: "Panadura, Sri Lanka" },
-                                    { icon: <FaEnvelope className="h-6 w-6 text-indigo-100" />, label: "Email", value: "pamunuwayehaniharshika@gmail.com" },
+                                    { icon: <FaEnvelope className="h-6 w-6 text-indigo-100" />, label: "Email", value: "yehanipamunuwa@gmail.com" },
                                     { icon: <FaPhoneAlt className="h-6 w-6 text-indigo-100" />, label: "Phone", value: "+9476 445 0928" },
                                 ].map((item, index) => (
                                     <div 

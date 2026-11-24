@@ -43,27 +43,32 @@ export const About = () => {
             }}
           >
             <p
-              className=" text-gray-600 dark:text-gray-300 mb-6"
+              className="text-gray-600 dark:text-gray-300 mb-6"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               Hello! I'm <strong>Yehani Harshika</strong>, a passionate web and
-              software developer with a strong foundation in modern
-              technologies. I have successfully completed the{" "}
-              <strong>Graduate Diploma in Software Engineering (GDSE)</strong>{" "}
-              at the <strong>Institute of Software Engineering (IJSE)</strong>{" "}
-              and a <strong>BSc (Hons) in Computer Science (Topup)</strong> at
-              the <strong> University of Bedfordshire.</strong>.
+              software developer with a strong foundation in frontend and
+              backend technologies.
             </p>
 
             <p
-              className=" text-gray-600 dark:text-gray-300 mb-6"
+              className="text-gray-600 dark:text-gray-300 mb-6"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
-              My passion for technology began with an insatiable curiosity about
-              how software operates. Over time, I have sharpened my expertise in
-              full-stack development, cloud computing, and cutting-edge
-              technologies, allowing me to craft efficient, scalable solutions
-              that cater to both user expectations and business objectives.
+              I have successfully completed a{" "}
+              <strong>BSc (Hons) in Computer Science</strong> with{" "}
+              <strong>First Class Honours</strong> at the{" "}
+              <strong>University of Bedfordshire (SLIIT City Uni)</strong>.
+            </p>
+
+            <p
+              className="text-gray-600 dark:text-gray-300 mb-6"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              I'm currently studying <strong>cloud computing</strong> and{" "}
+              <strong>data analysis</strong>, and I hope to craft efficient,
+              scalable solutions that cater to both user expectations and
+              business objectives.
             </p>
           </motion.div>
 
@@ -74,7 +79,7 @@ export const About = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <motion.div className="text-center" whileHover={{ scale: 1.1 }}>
-              <AnimatedCounter end={2} duration={0.5} suffix="+" />
+              <AnimatedCounter end={1} duration={0.5} suffix="+" />
               <div
                 className="text-gray-600 dark:text-gray-300"
                 style={{

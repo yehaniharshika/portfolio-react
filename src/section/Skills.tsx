@@ -86,18 +86,8 @@ export const Skills = () => {
       category: "frontend",
     },
     {
-      name: "Vite",
-      icon: <SiVite className="w-10 h-10 text-teal-500" />,
-      category: "frontend",
-    },
-    {
       name: "JQuery",
       icon: <SiJquery className="w-10 h-10 text-orange-500" />,
-      category: "frontend",
-    },
-    {
-      name: "Flask",
-      icon: <SiFlask className="w-10 h-10 text-red-400" />,
       category: "frontend",
     },
 
@@ -153,12 +143,7 @@ export const Skills = () => {
       icon: <SiFlutter className="w-10 h-10 text-blue-400" />,
       category: "mobile",
     },
-    {
-      name: "Android",
-      icon: <FaMobileAlt className="w-10 h-10 text-green-500" />,
-      category: "mobile",
-    },
-
+  
     {
       name: "GitHub",
       icon: <FaGithub className="w-10 h-10 text-white" />,
@@ -225,7 +210,7 @@ export const Skills = () => {
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           I have experience developing software using cutting-edge technologies,
-          ensuring high-quality solutions tailored to meet business needs.
+          ensuring high quality solutions tailored to meet business needs.
         </p>
 
         {/* Skill Category Buttons */}

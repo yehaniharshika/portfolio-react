@@ -14,8 +14,8 @@ const Experience = () => {
       date: "May 2025 - November 2025",
       points: [
         "Contributed to the design and development of multiple full-stack web applications, managing both frontend and backend.",
-        "Collaborated with the team on backend implementation for a marketplace project.",
-        "Backend & frontend development of an E-commerce platform.",
+        "Collaborated with the team on backend implementation for marketplace and Micro insurance project.",
+        "Backend & frontend development of an E-commerce platform for electronic shop.",
         "Designed the UI/UX in Figma and developed a complete website for an Elders' home project from start to finish.",
       ],
       skills: [
